@@ -1192,4 +1192,139 @@ SL.filmSection = function(o){
       t = setTimeout(()=>{ track.style.animationDuration = ''; }, 420);
     }, {passive:true});
   }
+
+  /* --- 25) 문의 폼 ------------------------------------------------
+     별도 서버 없이 동작합니다.
+       · data-endpoint 가 비어 있으면  → 작성한 내용을 담아 메일 앱을 엽니다
+       · data-endpoint 에 주소를 넣으면 → 그 주소로 바로 전송합니다
+         (Formspree / Web3Forms / FormSubmit 같은 폼 중계 서비스 주소를
+          contact.html 의 form 태그 data-endpoint 에 붙여 넣기만 하면 됩니다)
+  ------------------------------------------------------------------ */
+  const cf = document.getElementById('cform');
+  if(cf){
+    const EN   = cf.dataset.lang === 'en';
+    const MAIL = cf.dataset.mail || '';
+    const box  = cf.querySelector('.form-msg');
+    const T = EN ? {
+      need:'Please fill in the required fields.',
+      mail:'Please check the email address.',
+      open:'Your mail app should be opening. If nothing happens, use “Copy text”.',
+      sent:'Thank you — your enquiry has been sent. We will be in touch shortly.',
+      fail:'Sending failed. Please use “Copy text” and mail us directly.',
+      copied:'Copied. Paste it into a mail to ' + MAIL + '.',
+      nocopy:'Could not copy — please select the text manually.',
+      subj:'[Website enquiry]'
+    } : {
+      need:'필수 항목을 입력해 주세요.',
+      mail:'이메일 주소를 확인해 주세요.',
+      open:'메일 앱이 열립니다. 열리지 않으면 “내용 복사”를 눌러 주세요.',
+      sent:'문의가 전송되었습니다. 확인 후 연락드리겠습니다.',
+      fail:'전송에 실패했습니다. “내용 복사”를 눌러 메일로 보내 주세요.',
+      copied:'복사했습니다. ' + MAIL + ' 로 붙여넣어 보내주세요.',
+      nocopy:'복사하지 못했습니다. 내용을 직접 선택해 복사해 주세요.',
+      subj:'[홈페이지 문의]'
+    };
+    const say = (t, kind) => {
+      box.textContent = t;
+      box.className = 'form-msg' + (kind ? ' is-' + kind : '');
+      box.hidden = false;
+    };
+    const val = n => (cf.elements[n] ? cf.elements[n].value.trim() : '');
+    const mark = (el, bad) => {
+      el.closest('.field').classList.toggle('is-bad', bad);
+      el.setAttribute('aria-invalid', bad ? 'true' : 'false');
+    };
+
+    const check = () => {
+      let first = null;
+      cf.querySelectorAll('[required]').forEach(el => {
+        const bad = !el.value.trim();
+        mark(el, bad);
+        if(bad && !first) first = el;
+      });
+      if(first){ say(T.need, 'bad'); first.focus(); return false; }
+      const m = cf.elements['email'];
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(m.value.trim())){
+        mark(m, true); say(T.mail, 'bad'); m.focus(); return false;
+      }
+      return true;
+    };
+
+    /* 메일 본문 — 라벨과 값을 그대로 옮겨 담습니다 */
+    const compose = () => {
+      const L = EN
+        ? [['Name','name'],['Organisation','org'],['Phone','tel'],['Email','email']]
+        : [['담당자명','name'],['기관 / 회사명','org'],['연락처','tel'],['이메일','email']];
+      const lines = L.filter(([,n]) => val(n)).map(([k,n]) => k + ': ' + val(n));
+      lines.push('', (EN ? 'Message' : '문의 내용') + '\n' + val('message'));
+      const who = val('org') || val('name');
+      return { subject: T.subj + ' ' + who, body: lines.join('\n') };
+    };
+
+    cf.addEventListener('input', e => {
+      if(e.target.closest('.field')) mark(e.target, false);
+    });
+
+    cf.addEventListener('submit', async e => {
+      e.preventDefault();
+      if(!check()) return;
+      const { subject, body } = compose();
+      const url = cf.dataset.endpoint;
+
+      if(!url){                                   /* 메일 앱으로 열기 */
+        say(T.open, 'ok');
+        const href = 'mailto:' + MAIL +
+          '?subject=' + encodeURIComponent(subject) +
+          '&body='    + encodeURIComponent(body);
+        window.__mailto = href;          /* 점검용 */
+        location.href = href;
+        return;
+      }
+
+      const btn = cf.querySelector('button[type=submit]');
+      btn.disabled = true;
+      try{
+        const r = await fetch(url, {
+          method:'POST',
+          headers:{'Content-Type':'application/json', 'Accept':'application/json'},
+          body: JSON.stringify({
+            name:val('name'), org:val('org'), tel:val('tel'),
+            email:val('email'), message:val('message'),
+            _subject: subject
+          })
+        });
+        if(!r.ok) throw 0;
+        cf.reset(); say(T.sent, 'ok');
+      }catch(_){ say(T.fail, 'bad'); }
+      btn.disabled = false;
+    });
+
+    /* 내용 복사 — 메일 앱이 없는 환경의 대비책 */
+    cf.querySelector('.cf-copy').addEventListener('click', async () => {
+      if(!check()) return;
+      const { subject, body } = compose();
+      const text = subject + '\n\n' + body;
+      /* 최신 API 를 먼저 쓰되, 막히면 예전 방식으로 한 번 더 시도합니다
+         (file:// 로 직접 연 경우처럼 보안 컨텍스트가 아닐 때가 있습니다) */
+      let done = false;
+      try{
+        if(navigator.clipboard && isSecureContext){
+          await navigator.clipboard.writeText(text); done = true;
+        }
+      }catch(_){}
+      if(!done){
+        try{
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+          document.body.appendChild(ta);
+          ta.focus(); ta.select();
+          done = document.execCommand('copy');
+          ta.remove();
+        }catch(_){}
+      }
+      say(done ? T.copied : T.nocopy, done ? 'ok' : 'bad');
+    });
+  }
+
 })();

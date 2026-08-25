@@ -14,7 +14,7 @@
 <script>
 /* 배포 감시 — 서버가 캐시 헤더를 안 보내는 환경(python -m http.server 등)에서
    브라우저가 옛 HTML 을 계속 쓰는 일을 막습니다. 빌드 번호가 다르면 한 번만 새로고침. */
-window.__BUILD__="66ff6e09";(function(){try{
+window.__BUILD__="d6436f54";(function(){try{
  fetch("../../version.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json();})
   .then(function(j){
     if(!j||!j.build||j.build===window.__BUILD__) return;
@@ -30,7 +30,7 @@ window.__BUILD__="66ff6e09";(function(){try{
 <link rel="alternate" hreflang="ko" href="../../business/evs.html">
 <link rel="alternate" hreflang="en" href="../../en/business/evs.html">
 <link rel="stylesheet" href="../../vendor/swiper-bundle.min.css">
-<link rel="stylesheet" href="../../assets/style.css?v=66ff6e09">
+<link rel="stylesheet" href="../../assets/style.css?v=d6436f54">
 <noscript><style>[data-reveal]{opacity:1!important;translate:none!important}</style></noscript>
 </head>
 <body class="has-sub">
@@ -73,7 +73,7 @@ window.__BUILD__="66ff6e09";(function(){try{
 
 <section class="section"><div class="area-box">
 <div class="section-head" data-reveal><span class="eyebrow">SOLUTION</span><h2>Key solutions</h2></div>
-<div class="sol-grid" data-reveal-stagger="110"><article class="sol-item" data-reveal><div class="fig"><svg viewBox="0 0 100 100" fill="none" stroke="#5B78E0" stroke-width="2"><circle cx="50" cy="50" r="26"/><path d="M50 24v12M50 64v12M24 50h12M64 50h12"/><circle cx="50" cy="50" r="7" fill="#5B78E0"/></svg></div><div class="txt"><h3>Integrated priority-signal solution</h3><p>GPS tracking linked to signal controllers to grant priority</p></div></article><article class="sol-item" data-reveal><div class="fig"><svg viewBox="0 0 100 100" fill="none" stroke="#5B78E0" stroke-width="2"><path d="M50 14l30 14v20c0 18-13 28-30 34-17-6-30-16-30-34V28z"/><path d="M38 48l8 8 16-16"/></svg></div><div class="txt"><h3>Emergency dispatch advisory display</h3><p>Warns other drivers of an approaching emergency vehicle before the intersection</p></div></article></div>
+<div class="sol-grid is-one" data-reveal-stagger="110"><article class="sol-item has-photo" data-reveal><div class="fig"><picture><source srcset="../../assets/img/prod/evsled.webp?v=d6436f54" type="image/webp"><img src="../../assets/img/prod/evsled.jpg?v=d6436f54" alt="Emergency dispatch advisory display in service at an intersection" loading="lazy" class="fit-cover"></picture></div><div class="txt"><h3>Emergency dispatch advisory display</h3><p>Warns other drivers of an approaching emergency vehicle before the intersection</p></div></article></div>
 </div></section>
 <section class="section cta">
   <div class="area" data-reveal>
@@ -149,6 +149,6 @@ window.__BUILD__="66ff6e09";(function(){try{
 <script src="../../vendor/swiper-bundle.min.js"></script>
 <script src="../../vendor/gsap.min.js"></script>
 <script src="../../vendor/ScrollTrigger.min.js"></script>
-<script src="../../assets/app.js?v=66ff6e09"></script>
+<script src="../../assets/app.js?v=d6436f54"></script>
 </body>
 </html>

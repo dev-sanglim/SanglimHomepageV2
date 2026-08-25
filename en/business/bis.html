@@ -14,7 +14,7 @@
 <script>
 /* 배포 감시 — 서버가 캐시 헤더를 안 보내는 환경(python -m http.server 등)에서
    브라우저가 옛 HTML 을 계속 쓰는 일을 막습니다. 빌드 번호가 다르면 한 번만 새로고침. */
-window.__BUILD__="66ff6e09";(function(){try{
+window.__BUILD__="d6436f54";(function(){try{
  fetch("../../version.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json();})
   .then(function(j){
     if(!j||!j.build||j.build===window.__BUILD__) return;
@@ -30,7 +30,7 @@ window.__BUILD__="66ff6e09";(function(){try{
 <link rel="alternate" hreflang="ko" href="../../business/bis.html">
 <link rel="alternate" hreflang="en" href="../../en/business/bis.html">
 <link rel="stylesheet" href="../../vendor/swiper-bundle.min.css">
-<link rel="stylesheet" href="../../assets/style.css?v=66ff6e09">
+<link rel="stylesheet" href="../../assets/style.css?v=d6436f54">
 <noscript><style>[data-reveal]{opacity:1!important;translate:none!important}</style></noscript>
 </head>
 <body class="has-sub">
@@ -107,12 +107,6 @@ text and as voice announcements.</p></div>
 <div class="flow"><article class="flow-step" data-reveal style="--td:0ms"><span class="fs-no">01</span><span class="fs-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><path d="M6 34V20a4 4 0 014-4h6l3-5h10l3 5h6a4 4 0 014 4v14"/><circle cx="24" cy="26" r="7"/><path d="M6 34h36"/></svg></span><span class="fs-en">ON BOARD</span><h3>Collect</h3><p>The terminal on the bus reads its own position second by second and sends it to the centre.</p><ul class="fs-tags"><li>GPS positioning</li><li>LTE uplink</li><li>Stop-arrival detection</li><li>Route matching</li></ul></article><div class="flow-link" aria-hidden="true"><i></i><i></i><i></i></div><article class="flow-step" data-reveal style="--td:140ms"><span class="fs-no">02</span><span class="fs-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><rect x="16" y="16" width="16" height="16" rx="3"/><path d="M24 6v10M24 32v10M6 24h10M32 24h10M11 11l7 7M30 30l7 7M37 11l-7 7M18 30l-7 7"/></svg></span><span class="fs-en">CENTRE</span><h3>Predict</h3><p>Position, link travel state and historical running data are combined into an expected arrival time.</p><ul class="fs-tags"><li>Link travel time</li><li>Historical data</li><li>Congestion applied</li><li>Continuous recalculation</li></ul></article><div class="flow-link" aria-hidden="true"><i></i><i></i><i></i></div><article class="flow-step" data-reveal style="--td:280ms"><span class="fs-no">03</span><span class="fs-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><rect x="7" y="12" width="34" height="20" rx="3"/><path d="M14 20h12M14 26h20M24 32v8M16 40h16"/></svg></span><span class="fs-en">AT THE STOP</span><h3>Inform</h3><p>The same information is published to the stop, the vehicle and the app simultaneously.</p><ul class="fs-tags"><li>BIT displays</li><li>On-board unit</li><li>TTS voice</li><li>Open API</li></ul></article></div>
 </div></section>
 
-<section class="section"><div class="area">
-<div class="section-head" data-reveal><span class="eyebrow">SYSTEM MAP</span><h2>System configuration</h2></div>
-<figure class="figbox" data-reveal><picture><source srcset="../../assets/img/prod/bis.webp?v=66ff6e09" type="image/webp"><img src="../../assets/img/prod/bis.png?v=66ff6e09" alt="버스정보 안내시스템(BIS) 구성도" loading="lazy" data-fit="contain"></picture>
-<figcaption>On-board terminal, wireless network, centre and stop-side terminal, connected as one flow.</figcaption></figure>
-</div></section>
-
 <section class="section dark-sec dark-sec2"><div class="area">
   <div class="section-head is-dark" data-reveal><span class="eyebrow">BIT TERMINAL</span>
   <h2>The unit that stands at the stop</h2>
@@ -120,7 +114,7 @@ text and as voice announcements.</p></div>
   meets. If it cannot be read, the rest of the system means nothing.</p></div>
   <div class="dsol">
     <figure class="dsol-fig" data-reveal data-speed="0.06">
-      <span class="dsol-glow"></span><picture><source srcset="../../assets/img/prod/bit.webp?v=66ff6e09" type="image/webp"><img src="../../assets/img/prod/bit.png?v=66ff6e09" alt="버스정보안내 전광판(BIT) 표출 화면" loading="lazy" data-fit="contain"></picture>
+      <span class="dsol-glow"></span><picture><source srcset="../../assets/img/prod/bit.webp?v=d6436f54" type="image/webp"><img src="../../assets/img/prod/bit.png?v=d6436f54" alt="버스정보안내 전광판(BIT) 표출 화면" loading="lazy" data-fit="contain"></picture>
     </figure>
     <div class="dsol-body">
       <p class="dsol-lead" data-reveal>Route number, expected arrival time and current position on a single
@@ -137,7 +131,7 @@ text and as voice announcements.</p></div>
 
 <section class="section" style="background:var(--c-bg-soft)"><div class="area-box">
 <div class="section-head" data-reveal><span class="eyebrow">SOLUTION</span><h2>Key solutions</h2></div>
-<div class="sol-grid" data-reveal-stagger="110"><a class="sol-item has-photo is-link" href="../product/bit.html" data-cursor="View product" data-reveal><div class="fig"><picture><source srcset="../../assets/img/prod/bit.webp?v=66ff6e09" type="image/webp"><img src="../../assets/img/prod/bit.png?v=66ff6e09" alt="Bus information terminal (BIT)" loading="lazy" class="fit-contain"></picture><span class="sol-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div><div class="txt"><h3>Bus Information Terminal (BIT)</h3><p>Stop-side display showing arrival times and route information</p></div></a><a class="sol-item has-photo is-link" href="../product/gnss.html" data-cursor="View product" data-reveal><div class="fig"><picture><source srcset="../../assets/img/prod/gnss.webp?v=66ff6e09" type="image/webp"><img src="../../assets/img/prod/gnss.png?v=66ff6e09" alt="High-precision GNSS module" loading="lazy" class="fit-contain"></picture><span class="sol-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div><div class="txt"><h3>On-board equipment (OBE)</h3><p>Measures position by GPS and reports it to the centre over the wireless network</p></div></a><article class="sol-item has-photo" data-reveal><div class="fig"><picture><source srcset="../../assets/img/dash/bus.webp?v=66ff6e09" type="image/webp"><img src="../../assets/img/dash/bus.jpg?v=66ff6e09" alt="Bus information operations dashboard" loading="lazy" class="fit-cover" style="object-position:14% center"></picture></div><div class="txt"><h3>Operations software</h3><p>Monitors terminal health and distributes passenger information</p></div></article><article class="sol-item has-photo" data-reveal><div class="fig"><picture><source srcset="../../assets/img/dash/bus.webp?v=66ff6e09" type="image/webp"><img src="../../assets/img/dash/bus.jpg?v=66ff6e09" alt="Arrival-accuracy and operating-indicator panels" loading="lazy" class="fit-cover" style="object-position:73% center"></picture></div><div class="txt"><h3>Processing and control software</h3><p>Turns raw position data into accurate arrival predictions</p></div></article></div>
+<div class="sol-grid" data-reveal-stagger="110"><a class="sol-item has-photo is-link" href="../product/bit.html" data-cursor="View product" data-reveal><div class="fig"><picture><source srcset="../../assets/img/prod/bit.webp?v=d6436f54" type="image/webp"><img src="../../assets/img/prod/bit.png?v=d6436f54" alt="Bus information terminal (BIT)" loading="lazy" class="fit-contain"></picture><span class="sol-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div><div class="txt"><h3>Bus Information Terminal (BIT)</h3><p>Stop-side display showing arrival times and route information</p></div></a><a class="sol-item has-photo is-link" href="../product/gnss.html" data-cursor="View product" data-reveal><div class="fig"><picture><source srcset="../../assets/img/prod/gnss.webp?v=d6436f54" type="image/webp"><img src="../../assets/img/prod/gnss.png?v=d6436f54" alt="High-precision GNSS module" loading="lazy" class="fit-contain"></picture><span class="sol-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div><div class="txt"><h3>On-board equipment (OBE)</h3><p>Measures position by GPS and reports it to the centre over the wireless network</p></div></a><article class="sol-item has-photo" data-reveal><div class="fig"><picture><source srcset="../../assets/img/dash/bus.webp?v=d6436f54" type="image/webp"><img src="../../assets/img/dash/bus.jpg?v=d6436f54" alt="Bus information operations dashboard" loading="lazy" class="fit-cover" style="object-position:14% center"></picture></div><div class="txt"><h3>Operations software</h3><p>Monitors terminal health and distributes passenger information</p></div></article><article class="sol-item has-photo" data-reveal><div class="fig"><picture><source srcset="../../assets/img/dash/bus.webp?v=d6436f54" type="image/webp"><img src="../../assets/img/dash/bus.jpg?v=d6436f54" alt="Arrival-accuracy and operating-indicator panels" loading="lazy" class="fit-cover" style="object-position:73% center"></picture></div><div class="txt"><h3>Processing and control software</h3><p>Turns raw position data into accurate arrival predictions</p></div></article></div>
 </div></section>
 <section class="section cta">
   <div class="area" data-reveal>
@@ -213,6 +207,6 @@ text and as voice announcements.</p></div>
 <script src="../../vendor/swiper-bundle.min.js"></script>
 <script src="../../vendor/gsap.min.js"></script>
 <script src="../../vendor/ScrollTrigger.min.js"></script>
-<script src="../../assets/app.js?v=66ff6e09"></script>
+<script src="../../assets/app.js?v=d6436f54"></script>
 </body>
 </html>

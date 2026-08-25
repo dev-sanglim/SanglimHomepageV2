@@ -14,7 +14,7 @@
 <script>
 /* 배포 감시 — 서버가 캐시 헤더를 안 보내는 환경(python -m http.server 등)에서
    브라우저가 옛 HTML 을 계속 쓰는 일을 막습니다. 빌드 번호가 다르면 한 번만 새로고침. */
-window.__BUILD__="66ff6e09";(function(){try{
+window.__BUILD__="d6436f54";(function(){try{
  fetch("../version.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json();})
   .then(function(j){
     if(!j||!j.build||j.build===window.__BUILD__) return;
@@ -30,7 +30,7 @@ window.__BUILD__="66ff6e09";(function(){try{
 <link rel="alternate" hreflang="ko" href="../company/history.html">
 <link rel="alternate" hreflang="en" href="../en/company/history.html">
 <link rel="stylesheet" href="../vendor/swiper-bundle.min.css">
-<link rel="stylesheet" href="../assets/style.css?v=66ff6e09">
+<link rel="stylesheet" href="../assets/style.css?v=d6436f54">
 <noscript><style>[data-reveal]{opacity:1!important;translate:none!important}</style></noscript>
 </head>
 <body class="has-sub">
@@ -151,6 +151,6 @@ window.__BUILD__="66ff6e09";(function(){try{
 <script src="../vendor/swiper-bundle.min.js"></script>
 <script src="../vendor/gsap.min.js"></script>
 <script src="../vendor/ScrollTrigger.min.js"></script>
-<script src="../assets/app.js?v=66ff6e09"></script>
+<script src="../assets/app.js?v=d6436f54"></script>
 </body>
 </html>

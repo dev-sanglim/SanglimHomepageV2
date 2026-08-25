@@ -1056,12 +1056,13 @@ SOL_PHOTO = {
              "PTZ 회전형 지능형 카메라", "PTZ intelligent camera"),
   "p_dash": ("assets/img/dash/traffic", "jpg", "cover",
              "교통 관제 상황판 화면", "Traffic control wall dashboard"),
-  "p_ssz":  ("assets/img/prod/ssz", "png", "cover",
-             "스마트 스쿨존 표출 화면 모음", "Smart school-zone display screens"),
+  "p_evsled": ("assets/img/prod/evsled", "jpg", "cover",
+             "교차로에 설치된 긴급차량 출동안내 전광판 — '긴급차량 출동중' 표출",
+             "Emergency dispatch advisory display in service at an intersection"),
+  "p_ctrl": ("assets/img/prod/ctrl", "png", "tall",
+             "교통관리시스템 현장 제어기 함체", "Roadside traffic-management controller cabinet"),
   "p_ssz2": ("assets/img/prod/ssz2", "png", "cover",
              "어린이보호구역 스마트 스쿨존 전광판", "School-zone LED display"),
-  "p_evs":  ("assets/img/prod/evs", "png", "contain",
-             "긴급차량 우선신호 출동안내 전광판", "Emergency dispatch advisory display"),
   "p_bit":  ("assets/img/prod/bit", "png", "contain",
              "버스정보안내 전광판(BIT)", "Bus information terminal (BIT)"),
   "p_gnss": ("assets/img/prod/gnss", "png", "contain",
@@ -1108,7 +1109,8 @@ def solgrid(items, p=""):
         out += (f'{op}<div class="fig">{fig}{go}</div>'
                 f'<div class="txt"><h3>{name}</h3><p>{desc}</p></div>'
                 f'{"</a>" if href else "</article>"}')
-    return f'<div class="sol-grid" data-reveal-stagger="110">{out}</div>'
+    one = " is-one" if len(items) == 1 else ""
+    return f'<div class="sol-grid{one}" data-reveal-stagger="110">{out}</div>'
 
 
 def spec(items):
@@ -1711,6 +1713,19 @@ def its_services(rows=None):
     return '<div class="svc7-grid">%s</div>' % out
 
 
+# 보행자 픽토그램.
+#   상림기술에서 제공한 보행자.svg 에서 배경 흰 사각형을 빼고 형상만 가져왔습니다.
+#   원본 캔버스 3500×3500, 형상 바운딩박스 중심 (1750.7, 1750.2), 형상 높이 2936.3.
+#   따라서 원하는 높이 h 로 쓰려면 배율 = h / 2936.3 입니다.
+PED_BODY = ('<path d="M1924.29,1406.23c0,143.57.25,287.13-.28,430.7-.08,20.62,5.23,37.68,17.37,54.49,211.61,293.03,422.96,586.24,633.67,879.91,12.61,17.57,19.83,19.81,38.05,6.46,46.49-34.07,99.68-24.2,124.23,20.1,17.07,30.82,10.73,59.47-18.69,78.95-67.65,44.77-135.31,89.56-203.58,133.38-52.81,33.89-100.91,26.63-139.1-23.87-76.34-100.95-150.74-203.37-225.86-305.25-197.25-267.52-396.55-533.51-604.43-792.89-34.96-43.62-50.78-88.86-49.87-145.04,2.52-155.72.86-311.5.32-467.26-.05-13.5,3.1-21.8,15.56-28.99,75.61-43.6,150.65-88.16,225.89-132.4.58-.34,1.15-.72,1.74-1.05,28.55-16,38.15-36.77,26.36-57.03-12.11-20.81-33.28-21.88-62.08-4.9-125.87,74.2-251.86,148.21-378.15,221.69-12.64,7.35-20.17,15.88-24.17,30.01-37.55,132.54-76.05,264.8-113.42,397.38-14.64,51.94-42.05,90.9-97.55,102.77-85.24,18.24-161.44-59.44-139.15-143.86,25.37-96.08,54.05-191.3,81.64-286.79,17.26-59.75,35.21-119.3,52.79-178.95,15.09-51.23,46.56-89.35,92.32-116.28,145.22-85.43,290.53-170.71,435.49-256.57,55.51-32.88,113.5-46.21,176.84-28.08,78.73,22.55,135.03,98.71,135.02,182.7-.02,143.57,0,287.13,0,430.7-.31,0-.62,0-.94,0Z"/><path d="M1746.23,3217.77c-394.82,0-789.64-.47-1184.46.54-55.2.14-94.32-50.99-77.19-97.15,9.28-25.01,25.85-42.81,53.86-46.29,12.72-1.58,25.58-2.81,38.38-2.81,629.81-.12,1259.62-.09,1889.43-.08,155.76,0,311.52.08,467.28-.12,26.87-.03,51.64,5.53,69.41,26.94,18.15,21.89,23.65,46.98,11.14,73.81-13.21,28.33-36.4,43.87-67.15,44.69-48.05,1.29-96.15.45-144.23.45-352.15.01-704.31,0-1056.46,0Z"/><path d="M1453.32,1884.31c72.61,93.38,142.92,184.37,214.1,274.68,9.79,12.42,1.96,18.64-3.43,27.48-51.39,84.26-102.11,169.19-161.88,247.7-79.03,103.81-162.13,204.53-242.93,307-61.54,78.05-122.5,156.57-183.16,235.31-20.09,26.08-42.59,47.25-77.22,50.24-24.69,2.13-45.04-7.71-62.21-24.41-31.52-30.67-62.97-61.43-93.8-92.79-33.32-33.9-39.44-78.12-11.06-116.24,35.9-48.24,75.86-93.46,114.23-139.85,83.67-101.16,165.44-204,251.91-302.71,54.26-61.94,84.59-136.19,121.7-207.13,44.47-85,85.9-171.59,133.76-259.28Z"/><path d="M1997.41,1057.09c10.4,19.3,20.99,38.5,31.18,57.92,39.93,76.08,80.4,151.88,119.08,228.58,9.17,18.18,23.01,21.76,39.93,25.14,120.58,24.11,241.15,48.31,361.55,73.3,49.56,10.29,81.68,41.67,95.14,89.87,12.15,43.51-.91,82.13-32.98,112.9-29.06,27.88-65.12,38.68-104.88,30.76-127.24-25.34-254.31-51.52-381.45-77.33-37.06-7.52-73.96-16.29-111.33-21.69-17.39-2.51-20.18-10.09-20.12-24.95.51-120.54.52-241.09.65-361.63.05-43.83,0-87.66,0-131.5,1.08-.46,2.15-.91,3.23-1.37Z"/><path d="M1577.6,504.74c.24-123.87,96.03-220.66,216.33-222.66,135.87-2.26,227.37,104.58,228.93,221.41,1.62,121.62-102.75,223.39-226.59,222.69-119.33-.67-218.9-101.5-218.67-221.44Z"/>')
+
+
+def pedfig(h):
+    """다이어그램 좌표계 원점에 중심을 맞춘 보행자 픽토그램."""
+    return ('<g class="pedfig" transform="scale(%.6f) translate(-1750.7,-1750.2)">%s</g>'
+            % (h / 2936.3, PED_BODY))
+
+
 def cits_viz(L=None):
     """C-ITS V2X 개념도 — 차량·노변장치·보행자·센터가 서로 신호를 주고받습니다.
 
@@ -1769,7 +1784,7 @@ def cits_viz(L=None):
   </g>
 
   <!-- 차량 A -->
-  <g class="v2x-node v2x-car" transform="translate(150,231)">
+  <g class="v2x-node v2x-car" transform="translate(150,272)">
     <circle class="v2x-halo" r="34"/>
     <g class="v2x-ico" style="--s:2.4" transform="scale(2.4) translate(-12,-12)">
       <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/>
@@ -1791,31 +1806,28 @@ def cits_viz(L=None):
   <!-- 보행자 -->
   <g class="v2x-node" transform="translate(80,112)">
     <circle class="v2x-halo" r="28"/>
-    <g class="v2x-ico" style="--s:1.95" transform="scale(1.95) translate(-12,-12)">
-      <circle cx="12" cy="5" r="1"/><path d="m9 20 3-6 3 6"/>
-      <path d="m6 8 6 2 6-2"/><path d="M12 10v4"/>
-    </g>
+    {PEDFIG44}
     <text y="38">%(ped)s</text>
   </g>
 
   <g class="v2x-links">
-    <path class="v2x-link l1" d="M154 212 C 210 168 250 130 286 104"/>
-    <path class="v2x-link l2" d="M316 106 C 380 152 420 212 460 254"/>
-    <path class="v2x-link l3" d="M176 244 C 262 302 378 300 442 272"/>
+    <path class="v2x-link l1" d="M162 254 C 205 200 250 145 286 104"/>
+    <path class="v2x-link l2" d="M316 106 C 380 152 420 210 460 252"/>
+    <path class="v2x-link l3" d="M180 286 C 250 312 380 312 440 286"/>
     <path class="v2x-link l4" d="M322 70 C 420 38 520 34 570 44"/>
-    <path class="v2x-link l5" d="M96 122 C 152 156 232 130 282 100"/>
+    <path class="v2x-link l5" d="M102 124 C 156 156 232 130 282 100"/>
   </g>
 
   <g class="v2x-tag">
-    <text x="194" y="150">V2I</text>
-    <text x="364" y="186">V2I</text>
-    <text x="318" y="318">V2V</text>
+    <text x="198" y="180">V2I</text>
+    <text x="368" y="192">V2I</text>
+    <text x="310" y="334">V2V</text>
     <text x="464" y="26">V2N</text>
     <text x="174" y="118">V2P</text>
   </g>
 </svg>
 <figcaption>%(cap)s</figcaption>
-</figure>''' % L
+</figure>'''.replace('{PEDFIG44}', pedfig(44)) % L
 
 
 def cits_table(rows=None, ha="기존 ITS", hb="C-ITS", tag="차세대"):
@@ -2037,10 +2049,7 @@ def ssz_viz(L=None):
   <!-- 횡단보도를 건너는 보행자 -->
   <g class="sszv-node sszv-ped" transform="translate(436,282)">
     <circle class="sszv-halo is-warm" r="30"/>
-    <g class="sszv-ico" style="--s:2" transform="scale(2) translate(-12,-12)">
-      <circle cx="12" cy="5" r="1"/><path d="m9 20 3-6 3 6"/>
-      <path d="m6 8 6 2 6-2"/><path d="M12 10v4"/>
-    </g>
+    {PEDFIG40}
     <rect class="sszv-box" x="-26" y="-30" width="52" height="60" rx="4"/>
     <text y="-44">%(ped)s</text>
   </g>
@@ -2064,7 +2073,7 @@ def ssz_viz(L=None):
   </g>
 </svg>
 <figcaption>%(cap)s</figcaption>
-</figure>''' % L
+</figure>'''.replace('{PEDFIG40}', pedfig(40)) % L
 
 
 def policy_grid(rows=None, label="전략"):
@@ -2122,7 +2131,7 @@ its = f'''<section class="section"><div class="area">
 {solgrid([("도로전광판 (VMS)","sign","실시간 교통정보를 운전자에게 전달하는 가변정보 표출 장비","p_vms","../product/vms.html"),
           ("지능형 카메라","cam","AI 영상분석으로 차량을 인식하고 교통량 데이터를 수집","p_cam","../product/ptz.html"),
           ("교통 관제 상황판","sw","수집된 정보를 한 화면에서 감시하고 대응하는 관제 소프트웨어","p_dash","../product/dashboard.html"),
-          ("현장 제어기","ctrl","검지·표출 장비를 묶어 센터와 통신하는 현장 제어 장치")], "../")}
+          ("현장 제어기","ctrl","검지·표출 장비를 묶어 센터와 통신하는 현장 제어 장치","p_ctrl")], "../")}
 </div></section>
 
 <section class="section"><div class="area">
@@ -2155,12 +2164,6 @@ bis = f'''<section class="section"><div class="area">
 <section class="section" style="background:var(--c-bg-soft)"><div class="area">
 {head("HOW IT WORKS", "버스가 어디쯤 오는지 어떻게 알까요", "버스에서 출발한 좌표 하나가 정류장 전광판의 '3분'이 되기까지.")}
 {its_flow(BIS_FLOW)}
-</div></section>
-
-<section class="section"><div class="area">
-{head("SYSTEM MAP", "시스템 구성")}
-<figure class="figbox" data-reveal>{pimg("bis", "../")}
-<figcaption>차량 단말기 · 무선망 · 센터 · 정류장 단말기가 하나의 흐름으로 연결됩니다.</figcaption></figure>
 </div></section>
 
 <section class="section dark-sec dark-sec2"><div class="area">
@@ -2272,8 +2275,8 @@ evs = f'''<section class="section dark-sec"><div class="area">
 
 <section class="section" style="background:var(--c-bg-soft)"><div class="area-box">
 {head("SOLUTION", "주요 솔루션")}
-{solgrid([("긴급차량 우선신호 통합 솔루션","ctrl","GPS 추적과 신호제어기를 연동한 우선신호 부여 시스템"),
-          ("긴급차량 출동안내 전광판","sign","교차로 진입 전 일반 차량에 긴급차량 접근을 안내","p_evs")], "../")}
+{solgrid([("긴급차량 출동안내 전광판","sign",
+           "교차로 진입 전 일반 차량에 긴급차량 접근을 안내","p_evsled")], "../")}
 </div></section>'''
 PAGES.append(("business/evs.html","긴급차량 우선신호 시스템","GPS 추적 기반 긴급차량 우선신호 부여로 골든타임을 확보합니다.","business",evs))
 
@@ -2338,13 +2341,6 @@ ssz = f'''<section class="section dark-sec"><div class="area">
 {its_flow(SSZ_FLOW)}
 </div></section>
 
-<section class="section"><div class="area">
-{head("AI DETECTION", "AI 영상분석이 잡아내는 것들",
-      "보행자 주의부터 정지선 준수·불법 주정차·양보 운전까지, 한 화면에서 상황별로 다르게 표출합니다.")}
-<figure class="figbox" data-reveal>{pimg("ssz", "../")}
-<figcaption>상황에 따라 표출 문구와 픽토그램이 바뀝니다 · 어린이보호구역 스마트 스쿨존 표출 화면</figcaption></figure>
-</div></section>
-
 <section class="section dark-sec dark-sec2"><div class="area">
   <div class="section-head is-dark" data-reveal><span class="eyebrow">WHY AI</span>
   <h2>지나가는 것을 세는 것과, 보고 있는 것의 차이</h2>
@@ -2362,7 +2358,6 @@ ssz = f'''<section class="section dark-sec"><div class="area">
 <section class="section" style="background:var(--c-bg-soft)"><div class="area-box">
 {head("SOLUTION", "주요 솔루션")}
 {solgrid([("스마트스쿨존 전광판","sign","보행자 감지 시 운전자에게 즉시 경고를 표출","p_ssz2"),
-          ("스마트스쿨존 시스템 솔루션","cam","AI 영상분석 기반 보행자 감지 및 위반 단속 연동","p_ssz"),
           ("지능형 카메라","cam","보호구역 전체를 상시 감시하는 AI 영상 검지 장비","p_cam","../product/ptz.html")], "../")}
 </div></section>'''
 PAGES.append(("business/ssz.html","스마트 스쿨존 시스템","AI 영상분석 기반 어린이보호구역 보행자 안전 시스템.","business",ssz))
@@ -2435,18 +2430,30 @@ contact = f'''<section class="section"><div class="area">
          ("본사", ADDR_HQ),
          ("공장", ADDR_FT)])}
   </div>
-  <form data-reveal data-d="120" onsubmit="return false">
+  <form class="cform" id="cform" data-reveal data-d="120" novalidate
+        data-mail="{MAIL}" data-endpoint="">
     <div class="form-grid">
-      <div class="field"><label for="f-name">담당자명</label><input id="f-name" type="text" placeholder="홍길동"></div>
-      <div class="field"><label for="f-org">기관 / 회사명</label><input id="f-org" type="text" placeholder="○○시청"></div>
-      <div class="field"><label for="f-tel">연락처</label><input id="f-tel" type="tel" placeholder="010-0000-0000"></div>
-      <div class="field"><label for="f-mail">이메일</label><input id="f-mail" type="email" placeholder="name@example.com"></div>
-      <div class="field full"><label for="f-msg">문의 내용</label><textarea id="f-msg" placeholder="도입 검토 중인 시스템과 일정, 예산 범위 등을 알려주시면 더 정확한 제안이 가능합니다."></textarea></div>
+      <div class="field"><label for="f-name">담당자명 <b class="req">*</b></label>
+        <input id="f-name" name="name" type="text" placeholder="홍길동" required autocomplete="name"></div>
+      <div class="field"><label for="f-org">기관 / 회사명</label>
+        <input id="f-org" name="org" type="text" placeholder="○○시청" autocomplete="organization"></div>
+      <div class="field"><label for="f-tel">연락처</label>
+        <input id="f-tel" name="tel" type="tel" placeholder="010-0000-0000" autocomplete="tel"></div>
+      <div class="field"><label for="f-mail">이메일 <b class="req">*</b></label>
+        <input id="f-mail" name="email" type="email" placeholder="name@example.com" required autocomplete="email"></div>
+      <div class="field full"><label for="f-msg">문의 내용 <b class="req">*</b></label>
+        <textarea id="f-msg" name="message" required placeholder="도입 검토 중인 시스템과 일정, 예산 범위 등을 알려주시면 더 정확한 제안이 가능합니다."></textarea></div>
     </div>
-    <button type="submit" class="btn btn-primary" style="margin-top:22px">문의 보내기
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-    <p class="form-note">※ 현재 폼은 화면 구성용입니다. 실제 발송을 위해서는 백엔드(메일 전송) 연동이 필요합니다.<br>
-    당장 문의가 필요하시면 <a href="mailto:{MAIL}" style="color:var(--c-brand);font-weight:var(--w-mid)">{MAIL}</a> 로 보내주세요.</p>
+    <div class="form-act">
+      <button type="submit" class="btn btn-primary">문의 보내기
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <button type="button" class="btn btn-line cf-copy">내용 복사</button>
+    </div>
+    <p class="form-msg" role="status" aria-live="polite" hidden></p>
+    <p class="form-note">※ <b>문의 보내기</b>를 누르면 작성하신 내용이 그대로 담긴 메일이
+    <a href="mailto:{MAIL}" style="color:var(--c-brand);font-weight:var(--w-mid)">{MAIL}</a> 앞으로 열립니다.
+    보내기만 누르시면 됩니다.<br>
+    메일 앱이 열리지 않는 환경이라면 <b>내용 복사</b>를 눌러 붙여넣어 보내주세요.</p>
   </form>
 </div>
 </div></section>'''

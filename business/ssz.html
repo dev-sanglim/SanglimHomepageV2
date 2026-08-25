@@ -14,7 +14,7 @@
 <script>
 /* 배포 감시 — 서버가 캐시 헤더를 안 보내는 환경(python -m http.server 등)에서
    브라우저가 옛 HTML 을 계속 쓰는 일을 막습니다. 빌드 번호가 다르면 한 번만 새로고침. */
-window.__BUILD__="66ff6e09";(function(){try{
+window.__BUILD__="d6436f54";(function(){try{
  fetch("../version.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json();})
   .then(function(j){
     if(!j||!j.build||j.build===window.__BUILD__) return;
@@ -30,7 +30,7 @@ window.__BUILD__="66ff6e09";(function(){try{
 <link rel="alternate" hreflang="ko" href="../business/ssz.html">
 <link rel="alternate" hreflang="en" href="../en/business/ssz.html">
 <link rel="stylesheet" href="../vendor/swiper-bundle.min.css">
-<link rel="stylesheet" href="../assets/style.css?v=66ff6e09">
+<link rel="stylesheet" href="../assets/style.css?v=d6436f54">
 <noscript><style>[data-reveal]{opacity:1!important;translate:none!important}</style></noscript>
 </head>
 <body class="has-sub">
@@ -134,10 +134,7 @@ window.__BUILD__="66ff6e09";(function(){try{
   <!-- 횡단보도를 건너는 보행자 -->
   <g class="sszv-node sszv-ped" transform="translate(436,282)">
     <circle class="sszv-halo is-warm" r="30"/>
-    <g class="sszv-ico" style="--s:2" transform="scale(2) translate(-12,-12)">
-      <circle cx="12" cy="5" r="1"/><path d="m9 20 3-6 3 6"/>
-      <path d="m6 8 6 2 6-2"/><path d="M12 10v4"/>
-    </g>
+    <g class="pedfig" transform="scale(0.013623) translate(-1750.7,-1750.2)"><path d="M1924.29,1406.23c0,143.57.25,287.13-.28,430.7-.08,20.62,5.23,37.68,17.37,54.49,211.61,293.03,422.96,586.24,633.67,879.91,12.61,17.57,19.83,19.81,38.05,6.46,46.49-34.07,99.68-24.2,124.23,20.1,17.07,30.82,10.73,59.47-18.69,78.95-67.65,44.77-135.31,89.56-203.58,133.38-52.81,33.89-100.91,26.63-139.1-23.87-76.34-100.95-150.74-203.37-225.86-305.25-197.25-267.52-396.55-533.51-604.43-792.89-34.96-43.62-50.78-88.86-49.87-145.04,2.52-155.72.86-311.5.32-467.26-.05-13.5,3.1-21.8,15.56-28.99,75.61-43.6,150.65-88.16,225.89-132.4.58-.34,1.15-.72,1.74-1.05,28.55-16,38.15-36.77,26.36-57.03-12.11-20.81-33.28-21.88-62.08-4.9-125.87,74.2-251.86,148.21-378.15,221.69-12.64,7.35-20.17,15.88-24.17,30.01-37.55,132.54-76.05,264.8-113.42,397.38-14.64,51.94-42.05,90.9-97.55,102.77-85.24,18.24-161.44-59.44-139.15-143.86,25.37-96.08,54.05-191.3,81.64-286.79,17.26-59.75,35.21-119.3,52.79-178.95,15.09-51.23,46.56-89.35,92.32-116.28,145.22-85.43,290.53-170.71,435.49-256.57,55.51-32.88,113.5-46.21,176.84-28.08,78.73,22.55,135.03,98.71,135.02,182.7-.02,143.57,0,287.13,0,430.7-.31,0-.62,0-.94,0Z"/><path d="M1746.23,3217.77c-394.82,0-789.64-.47-1184.46.54-55.2.14-94.32-50.99-77.19-97.15,9.28-25.01,25.85-42.81,53.86-46.29,12.72-1.58,25.58-2.81,38.38-2.81,629.81-.12,1259.62-.09,1889.43-.08,155.76,0,311.52.08,467.28-.12,26.87-.03,51.64,5.53,69.41,26.94,18.15,21.89,23.65,46.98,11.14,73.81-13.21,28.33-36.4,43.87-67.15,44.69-48.05,1.29-96.15.45-144.23.45-352.15.01-704.31,0-1056.46,0Z"/><path d="M1453.32,1884.31c72.61,93.38,142.92,184.37,214.1,274.68,9.79,12.42,1.96,18.64-3.43,27.48-51.39,84.26-102.11,169.19-161.88,247.7-79.03,103.81-162.13,204.53-242.93,307-61.54,78.05-122.5,156.57-183.16,235.31-20.09,26.08-42.59,47.25-77.22,50.24-24.69,2.13-45.04-7.71-62.21-24.41-31.52-30.67-62.97-61.43-93.8-92.79-33.32-33.9-39.44-78.12-11.06-116.24,35.9-48.24,75.86-93.46,114.23-139.85,83.67-101.16,165.44-204,251.91-302.71,54.26-61.94,84.59-136.19,121.7-207.13,44.47-85,85.9-171.59,133.76-259.28Z"/><path d="M1997.41,1057.09c10.4,19.3,20.99,38.5,31.18,57.92,39.93,76.08,80.4,151.88,119.08,228.58,9.17,18.18,23.01,21.76,39.93,25.14,120.58,24.11,241.15,48.31,361.55,73.3,49.56,10.29,81.68,41.67,95.14,89.87,12.15,43.51-.91,82.13-32.98,112.9-29.06,27.88-65.12,38.68-104.88,30.76-127.24-25.34-254.31-51.52-381.45-77.33-37.06-7.52-73.96-16.29-111.33-21.69-17.39-2.51-20.18-10.09-20.12-24.95.51-120.54.52-241.09.65-361.63.05-43.83,0-87.66,0-131.5,1.08-.46,2.15-.91,3.23-1.37Z"/><path d="M1577.6,504.74c.24-123.87,96.03-220.66,216.33-222.66,135.87-2.26,227.37,104.58,228.93,221.41,1.62,121.62-102.75,223.39-226.59,222.69-119.33-.67-218.9-101.5-218.67-221.44Z"/></g>
     <rect class="sszv-box" x="-26" y="-30" width="52" height="60" rx="4"/>
     <text y="-44">보행자 감지</text>
   </g>
@@ -171,7 +168,7 @@ window.__BUILD__="66ff6e09";(function(){try{
   읽히지 않으면 시스템 전체가 무의미해집니다.</p></div>
   <div class="dsol">
     <figure class="dsol-fig" data-reveal data-speed="0.06">
-      <span class="dsol-glow"></span><picture><source srcset="../assets/img/prod/ssz2.webp?v=66ff6e09" type="image/webp"><img src="../assets/img/prod/ssz2.png?v=66ff6e09" alt="어린이보호구역 스마트 스쿨존 안내" loading="lazy" data-fit="cover"></picture>
+      <span class="dsol-glow"></span><picture><source srcset="../assets/img/prod/ssz2.webp?v=d6436f54" type="image/webp"><img src="../assets/img/prod/ssz2.png?v=d6436f54" alt="어린이보호구역 스마트 스쿨존 안내" loading="lazy" data-fit="cover"></picture>
     </figure>
     <div class="dsol-body">
       <p class="dsol-lead" data-reveal>평소에는 보호구역임을 알리고, 위험한 순간에는 경고로 바뀝니다.</p>
@@ -183,12 +180,6 @@ window.__BUILD__="66ff6e09";(function(){try{
 <section class="section" style="background:var(--c-bg-soft)"><div class="area">
 <div class="section-head" data-reveal><span class="eyebrow">HOW IT WORKS</span><h2>카메라가 본 것이 경고가 되기까지</h2><p class="lead">보호구역 안의 한 장면이 운전자의 눈앞 문장으로 바뀌는 세 단계.</p></div>
 <div class="flow"><article class="flow-step" data-reveal style="--td:0ms"><span class="fs-no">01</span><span class="fs-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><path d="M6 34V20a4 4 0 014-4h6l3-5h10l3 5h6a4 4 0 014 4v14"/><circle cx="24" cy="26" r="7"/><path d="M6 34h36"/></svg></span><span class="fs-en">AT THE CROSSING</span><h3>검지</h3><p>보호구역 카메라가 횡단보도와 그 주변을 상시 봅니다. 사람과 차를 구분해 읽습니다.</p><ul class="fs-tags"><li>AI 영상분석</li><li>보행자 검지</li><li>차량 인식</li><li>주야간 대응</li></ul></article><div class="flow-link" aria-hidden="true"><i></i><i></i><i></i></div><article class="flow-step" data-reveal style="--td:140ms"><span class="fs-no">02</span><span class="fs-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><rect x="16" y="16" width="16" height="16" rx="3"/><path d="M24 6v10M24 32v10M6 24h10M32 24h10M11 11l7 7M30 30l7 7M37 11l-7 7M18 30l-7 7"/></svg></span><span class="fs-en">ON SITE</span><h3>판단</h3><p>보행 의도와 차량 접근을 함께 보고, 경고를 낼지 단속 자료로 남길지 판단합니다.</p><ul class="fs-tags"><li>보행 의도 판정</li><li>접근 차량 속도</li><li>위험 상황 분류</li><li>이벤트 기록</li></ul></article><div class="flow-link" aria-hidden="true"><i></i><i></i><i></i></div><article class="flow-step" data-reveal style="--td:280ms"><span class="fs-no">03</span><span class="fs-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><rect x="7" y="12" width="34" height="20" rx="3"/><path d="M14 20h12M14 26h20M24 32v8M16 40h16"/></svg></span><span class="fs-en">TO THE DRIVER</span><h3>표출</h3><p>전광판이 즉시 경고를 띄우고, 위반은 자료로 남아 단속 시스템으로 넘어갑니다.</p><ul class="fs-tags"><li>LED 경고 표출</li><li>음성 안내</li><li>불법 주정차</li><li>정지선 위반</li></ul></article></div>
-</div></section>
-
-<section class="section"><div class="area">
-<div class="section-head" data-reveal><span class="eyebrow">AI DETECTION</span><h2>AI 영상분석이 잡아내는 것들</h2><p class="lead">보행자 주의부터 정지선 준수·불법 주정차·양보 운전까지, 한 화면에서 상황별로 다르게 표출합니다.</p></div>
-<figure class="figbox" data-reveal><picture><source srcset="../assets/img/prod/ssz.webp?v=66ff6e09" type="image/webp"><img src="../assets/img/prod/ssz.png?v=66ff6e09" alt="스마트 스쿨존 안전시스템 표출 화면" loading="lazy" data-fit="cover"></picture>
-<figcaption>상황에 따라 표출 문구와 픽토그램이 바뀝니다 · 어린이보호구역 스마트 스쿨존 표출 화면</figcaption></figure>
 </div></section>
 
 <section class="section dark-sec dark-sec2"><div class="area">
@@ -206,7 +197,7 @@ window.__BUILD__="66ff6e09";(function(){try{
 
 <section class="section" style="background:var(--c-bg-soft)"><div class="area-box">
 <div class="section-head" data-reveal><span class="eyebrow">SOLUTION</span><h2>주요 솔루션</h2></div>
-<div class="sol-grid" data-reveal-stagger="110"><article class="sol-item has-photo" data-reveal><div class="fig"><picture><source srcset="../assets/img/prod/ssz2.webp?v=66ff6e09" type="image/webp"><img src="../assets/img/prod/ssz2.png?v=66ff6e09" alt="어린이보호구역 스마트 스쿨존 전광판" loading="lazy" class="fit-cover"></picture></div><div class="txt"><h3>스마트스쿨존 전광판</h3><p>보행자 감지 시 운전자에게 즉시 경고를 표출</p></div></article><article class="sol-item has-photo" data-reveal><div class="fig"><picture><source srcset="../assets/img/prod/ssz.webp?v=66ff6e09" type="image/webp"><img src="../assets/img/prod/ssz.png?v=66ff6e09" alt="스마트 스쿨존 표출 화면 모음" loading="lazy" class="fit-cover"></picture></div><div class="txt"><h3>스마트스쿨존 시스템 솔루션</h3><p>AI 영상분석 기반 보행자 감지 및 위반 단속 연동</p></div></article><a class="sol-item has-photo is-link" href="../product/ptz.html" data-cursor="제품 보기" data-reveal><div class="fig"><picture><source srcset="../assets/img/prod/ptz.webp?v=66ff6e09" type="image/webp"><img src="../assets/img/prod/ptz.png?v=66ff6e09" alt="PTZ 회전형 지능형 카메라" loading="lazy" class="fit-contain"></picture><span class="sol-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div><div class="txt"><h3>지능형 카메라</h3><p>보호구역 전체를 상시 감시하는 AI 영상 검지 장비</p></div></a></div>
+<div class="sol-grid" data-reveal-stagger="110"><article class="sol-item has-photo" data-reveal><div class="fig"><picture><source srcset="../assets/img/prod/ssz2.webp?v=d6436f54" type="image/webp"><img src="../assets/img/prod/ssz2.png?v=d6436f54" alt="어린이보호구역 스마트 스쿨존 전광판" loading="lazy" class="fit-cover"></picture></div><div class="txt"><h3>스마트스쿨존 전광판</h3><p>보행자 감지 시 운전자에게 즉시 경고를 표출</p></div></article><a class="sol-item has-photo is-link" href="../product/ptz.html" data-cursor="제품 보기" data-reveal><div class="fig"><picture><source srcset="../assets/img/prod/ptz.webp?v=d6436f54" type="image/webp"><img src="../assets/img/prod/ptz.png?v=d6436f54" alt="PTZ 회전형 지능형 카메라" loading="lazy" class="fit-contain"></picture><span class="sol-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div><div class="txt"><h3>지능형 카메라</h3><p>보호구역 전체를 상시 감시하는 AI 영상 검지 장비</p></div></a></div>
 </div></section>
 <section class="section cta">
   <div class="area" data-reveal>
@@ -282,6 +273,6 @@ window.__BUILD__="66ff6e09";(function(){try{
 <script src="../vendor/swiper-bundle.min.js"></script>
 <script src="../vendor/gsap.min.js"></script>
 <script src="../vendor/ScrollTrigger.min.js"></script>
-<script src="../assets/app.js?v=66ff6e09"></script>
+<script src="../assets/app.js?v=d6436f54"></script>
 </body>
 </html>

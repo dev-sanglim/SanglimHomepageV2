@@ -531,7 +531,7 @@ companies nationwide. Hover a logo to see it in full colour.</p></div>
 
 <section class="section"><div class="area-box">
 {head("SOLUTION", "Key solutions")}
-{solgrid(sols)}
+{solgrid(sols, p2)}
 </div></section>"""
         P.append((url, title, desc, "business", b))
 
@@ -663,7 +663,7 @@ room dashboards that <b>deliver</b> it.</p></div>
            "Software that monitors the whole network on one screen and drives the response", "p_dash",
            "../product/dashboard.html"),
           ("Field controller", "ctrl",
-           "On-site unit that ties detection and display equipment back to the centre")], p2)}
+           "On-site unit that ties detection and display equipment back to the centre", "p_ctrl")], p2)}
 </div></section>
 
 <section class="section"><div class="area">
@@ -742,12 +742,6 @@ text and as voice announcements.</p></div>
 {its_flow(EN_BIS_FLOW)}
 </div></section>
 
-<section class="section"><div class="area">
-{head("SYSTEM MAP", "System configuration")}
-<figure class="figbox" data-reveal>{pimg("bis", p2)}
-<figcaption>On-board terminal, wireless network, centre and stop-side terminal, connected as one flow.</figcaption></figure>
-</div></section>
-
 <section class="section dark-sec dark-sec2"><div class="area">
   <div class="section-head is-dark" data-reveal><span class="eyebrow">BIT TERMINAL</span>
   <h2>The unit that stands at the stop</h2>
@@ -800,10 +794,9 @@ text and as voice announcements.</p></div>
         ["Dispatch delays caused by chronic congestion",
          "Rising number of collisions involving emergency vehicles",
          "Protecting the golden hour for patients"],
-        [("Integrated priority-signal solution", "ctrl",
-          "GPS tracking linked to signal controllers to grant priority"),
-         ("Emergency dispatch advisory display", "sign",
-          "Warns other drivers of an approaching emergency vehicle before the intersection")],
+        [("Emergency dispatch advisory display", "sign",
+          "Warns other drivers of an approaching emergency vehicle before the intersection",
+          "p_evsled")],
         "GPS-based signal priority that protects the golden hour for emergency patients.")
 
     biz("business/ssz.html", "Smart School Zone", "SMART SCHOOL ZONE",
@@ -817,8 +810,8 @@ text and as voice announcements.</p></div>
          "Active prevention rather than after-the-fact enforcement"],
         [("Smart school-zone display", "sign",
           "Warns the driver the moment a pedestrian is detected"),
-         ("Smart school-zone solution", "cam",
-          "AI video analysis for pedestrian detection and violation enforcement")],
+         ("Intelligent camera", "cam",
+          "AI video detection that watches the whole protection zone")],
         "Pedestrian safety in school zones, built on AI video analysis.")
 
     # -------------------------------------------------------------- products
@@ -927,19 +920,30 @@ continues to earn recognition for its engineering work.</p></div>
          ("Head office", ADDR_HQ_EN),
          ("Factory", ADDR_FT_EN)])}
   </div>
-  <form data-reveal data-d="120" onsubmit="return false">
+  <form class="cform" id="cform" data-reveal data-d="120" novalidate
+        data-mail="{MAIL}" data-endpoint="" data-lang="en">
     <div class="form-grid">
-      <div class="field"><label for="f-name">Name</label><input id="f-name" type="text" placeholder="Jane Doe"></div>
-      <div class="field"><label for="f-org">Organisation</label><input id="f-org" type="text" placeholder="City of ..."></div>
-      <div class="field"><label for="f-tel">Phone</label><input id="f-tel" type="tel" placeholder="+82 10-0000-0000"></div>
-      <div class="field"><label for="f-mail">Email</label><input id="f-mail" type="email" placeholder="name@example.com"></div>
-      <div class="field full"><label for="f-msg">Message</label><textarea id="f-msg" placeholder="Tell us which system you are considering, along with timeline and budget range, and we can be more specific in our reply."></textarea></div>
+      <div class="field"><label for="f-name">Name <b class="req">*</b></label>
+        <input id="f-name" name="name" type="text" placeholder="Jane Doe" required autocomplete="name"></div>
+      <div class="field"><label for="f-org">Organisation</label>
+        <input id="f-org" name="org" type="text" placeholder="City of ..." autocomplete="organization"></div>
+      <div class="field"><label for="f-tel">Phone</label>
+        <input id="f-tel" name="tel" type="tel" placeholder="+82 10-0000-0000" autocomplete="tel"></div>
+      <div class="field"><label for="f-mail">Email <b class="req">*</b></label>
+        <input id="f-mail" name="email" type="email" placeholder="name@example.com" required autocomplete="email"></div>
+      <div class="field full"><label for="f-msg">Message <b class="req">*</b></label>
+        <textarea id="f-msg" name="message" required placeholder="Tell us which system you are considering, along with timeline and budget range, and we can be more specific in our reply."></textarea></div>
     </div>
-    <button type="submit" class="btn btn-primary" style="margin-top:22px">Send enquiry
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-    <p class="form-note">&#8251; This form is a layout placeholder. Delivering messages requires a
-    mail-sending backend.<br>For an immediate enquiry please write to
-    <a href="mailto:{MAIL}" style="color:var(--c-brand);font-weight:var(--w-mid)">{MAIL}</a>.</p>
+    <div class="form-act">
+      <button type="submit" class="btn btn-primary">Send enquiry
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <button type="button" class="btn btn-line cf-copy">Copy text</button>
+    </div>
+    <p class="form-msg" role="status" aria-live="polite" hidden></p>
+    <p class="form-note">&#8251; <b>Send enquiry</b> opens a message to
+    <a href="mailto:{MAIL}" style="color:var(--c-brand);font-weight:var(--w-mid)">{MAIL}</a>
+    with everything you wrote already filled in &mdash; just press send.<br>
+    If no mail app opens, use <b>Copy text</b> and paste it into your own mail.</p>
   </form>
 </div>
 </div></section>"""
