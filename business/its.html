@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>지능형 교통체계 | (주)상림기술</title>
+<meta name="description" content="AI 딥러닝 기반 실시간 교통정보 수집·가공 시스템.">
+<meta http-equiv="Cache-Control" content="no-cache">
+<link rel="icon" href="../assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta name="theme-color" content="#1F2A5A">
+<script>
+/* 배포 감시 — 서버가 캐시 헤더를 안 보내는 환경(python -m http.server 등)에서
+   브라우저가 옛 HTML 을 계속 쓰는 일을 막습니다. 빌드 번호가 다르면 한 번만 새로고침. */
+window.__BUILD__="66ff6e09";(function(){try{
+ fetch("../version.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json();})
+  .then(function(j){
+    if(!j||!j.build||j.build===window.__BUILD__) return;
+    /* 빌드 번호별로 한 번씩만 새로고침 — 예전엔 세션당 한 번뿐이라
+       두 번째 수정부터는 옛 화면이 그대로 남았습니다 */
+    var k="sl-rl:"+j.build;
+    if(sessionStorage.getItem(k)) return;
+    sessionStorage.setItem(k,"1");
+    location.reload();
+  }).catch(function(){});
+ }catch(e){}})();
+</script>
+<link rel="alternate" hreflang="ko" href="../business/its.html">
+<link rel="alternate" hreflang="en" href="../en/business/its.html">
+<link rel="stylesheet" href="../vendor/swiper-bundle.min.css">
+<link rel="stylesheet" href="../assets/style.css?v=66ff6e09">
+<noscript><style>[data-reveal]{opacity:1!important;translate:none!important}</style></noscript>
+</head>
+<body class="has-sub">
+
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="../index.html" class="logo">
+      <img class="lg-white" src="../assets/img/logo-h-white.png" alt="(주)상림기술">
+      <img class="lg-color" src="../assets/img/logo-h.png" alt="(주)상림기술">
+    </a>
+    <nav><ul class="gnb"><li><a href="../company/greeting.html">회사소개</a><div class="gnb-2dep"><ul><li><a href="../company/greeting.html">인사말</a></li><li><a href="../company/history.html">연혁</a></li><li><a href="../company/organization.html">조직도</a></li><li><a href="../company/record.html">구축사례</a></li><li><a href="../company/certification.html">인증현황</a></li><li><a href="../company/partners.html">파트너사</a></li><li><a href="../company/location.html">오시는 길</a></li></ul></div></li><li class="cur"><a href="../business/its.html">사업분야</a><div class="gnb-2dep"><ul><li><a href="../business/its.html">지능형 교통체계</a></li><li><a href="../business/bis.html">버스정보 안내시스템</a></li><li><a href="../business/evs.html">긴급차량 우선신호 시스템</a></li><li><a href="../business/ssz.html">스마트 스쿨존 시스템</a></li></ul></div></li><li><a href="../product/vms.html">주요제품</a><div class="gnb-2dep"><ul><li><a href="../product/vms.html">도로교통 전광판(VMS)</a></li><li><a href="../product/bit.html">버스정보안내 전광판(BIT)</a></li><li><a href="../product/ecs.html">전기차 충전소 전광판</a></li><li><a href="../product/gnss.html">초정밀 모듈(GNSS)</a></li><li><a href="../product/ptz.html">PTZ 카메라</a></li><li><a href="../product/dashboard.html">상황판(대시보드)</a></li></ul></div></li><li><a href="../contact.html">문의하기</a></li></ul></nav>
+    <div class="header-util">
+      <div class="lang"><a href="../business/its.html" class="on">KR</a><span>/</span><a href="../en/business/its.html">EN</a></div>
+      <button class="navtog" id="navtog" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="drawer-dim" id="dim"></div>
+<aside class="drawer" id="drawer" aria-label="모바일 메뉴"></aside>
+
+<main id="top">
+<section class="subvis">
+  <span class="orb o1"></span><span class="orb o2"></span>
+  <div class="subvis-inner">
+    <h1>지능형 교통체계</h1>
+    <div class="crumb"><a href="../index.html">홈</a><i></i><a href="../business/its.html">사업분야</a><i></i><span class="cur">지능형 교통체계</span></div>
+  </div>
+</section>
+<nav class="subnav"><ul><li><a href="../business/its.html" class="on">지능형 교통체계</a></li><li><a href="../business/bis.html">버스정보 안내시스템</a></li><li><a href="../business/evs.html">긴급차량 우선신호 시스템</a></li><li><a href="../business/ssz.html">스마트 스쿨존 시스템</a></li></ul></nav>
+<section class="section"><div class="area">
+<div class="section-head" data-reveal><span class="eyebrow">INTELLIGENT TRANSPORT SYSTEMS</span><h2>지능형 교통체계</h2></div>
+<div class="lead-box" data-reveal><p>지능형교통체계(ITS, Intelligent Transport Systems)란 교통수단 및 교통시설에 대하여
+전자·제어 및 통신 등 첨단 교통기술과 교통정보를 개발·활용함으로써 교통 체계의 운영 및 관리를
+과학화·자동화하고, 교통의 효율성과 안전성을 향상시키는 교통 체계를 의미합니다.</p></div>
+</div></section>
+
+<section class="section" style="padding-top:0"><div class="area">
+<div class="tv"><aside class="tv-panel" data-reveal><span class="tv-art" aria-hidden="true">
+<svg viewBox="0 0 420 520" preserveAspectRatio="xMaxYMax slice">
+ <defs>
+  <linearGradient id="tvSheet" x1=".08" y1="1" x2=".92" y2=".05">
+   <stop offset="0" stop-color="#0A1233"/><stop offset=".38" stop-color="#1E39B4"/>
+   <stop offset=".72" stop-color="#4E7CF8"/><stop offset="1" stop-color="#AECBFF"/>
+  </linearGradient>
+  <linearGradient id="tvEdge" x1="0" y1="1" x2=".7" y2="0">
+   <stop offset="0" stop-color="#5C87FF" stop-opacity="0"/>
+   <stop offset=".55" stop-color="#B9D2FF" stop-opacity=".95"/>
+   <stop offset="1" stop-color="#F2F7FF"/>
+  </linearGradient>
+  <linearGradient id="tvFacet" x1="0" y1="0" x2="1" y2="1">
+   <stop offset="0" stop-color="#E8F1FF" stop-opacity=".92"/>
+   <stop offset="1" stop-color="#3C63E8" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="tvBack" x1="0" y1="0" x2="1" y2="1">
+   <stop offset="0" stop-color="#16246B" stop-opacity=".0"/>
+   <stop offset="1" stop-color="#2A4BD8" stop-opacity=".85"/>
+  </linearGradient>
+  <filter id="tvSoft" x="-40%" y="-40%" width="180%" height="180%">
+   <feGaussianBlur stdDeviation="34"/></filter>
+  <filter id="tvSoft2" x="-30%" y="-30%" width="160%" height="160%">
+   <feGaussianBlur stdDeviation="9"/></filter>
+ </defs>
+ <ellipse cx="330" cy="372" rx="205" ry="215" fill="#2B4CDC" opacity=".62" filter="url(#tvSoft)"/>
+ <path d="M64 520 L286 128 L420 196 L420 520 Z" fill="url(#tvSheet)"/>
+ <path d="M286 128 L420 196 L420 96 Z" fill="url(#tvBack)"/>
+ <path d="M64 520 L286 128 L306 139 L92 520 Z" fill="url(#tvEdge)" filter="url(#tvSoft2)" opacity=".9"/>
+ <path d="M286 128 L306 139 L420 205 L420 196 Z" fill="url(#tvFacet)" opacity=".8"/>
+ <path d="M188 520 L338 254 L420 296 L420 520 Z" fill="#7FA6FF" opacity=".16"/>
+</svg></span><span class="tv-eyebrow">SangLim Tech Vision</span><h2 class="tv-title"><span>상림기술은 도로 위 검지부터</span><span>AI 교통정보 운영까지,</span><span>하나의 흐름으로 만듭니다</span></h2><div class="tv-body"><p>교통 인프라 시장은 장비를 납품하는 단계를 넘어, 수집한 데이터를 어떻게 가공하고 운영하느냐로 무게중심이 옮겨가고 있습니다.</p><p>상림기술은 이 변화에 맞춰 검지 장비부터 표출 장비, 관제 소프트웨어까지 하나의 체계로 연결한 지능형 교통체계를 제공합니다.</p></div></aside><div class="tv-grid"><article class="tv-card" data-reveal style="--td:0ms"><span class="tv-n">01</span><span class="tv-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 9.1V6.4A3.4 3.4 0 016.4 3h2.7" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" opacity=".45"/><path d="M14.9 3h2.7A3.4 3.4 0 0121 6.4v2.7" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" opacity=".45"/><path d="M21 14.9v2.7a3.4 3.4 0 01-3.4 3.4h-2.7" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" opacity=".45"/><path d="M9.1 21H6.4A3.4 3.4 0 013 17.6v-2.7" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" opacity=".45"/><circle cx="12" cy="12" r="5.3" opacity=".3"/><circle cx="12" cy="12" r="2.6"/></svg></span><h3>AI Detection</h3><b>AI 영상 검지</b><p>딥러닝 영상분석으로 차량은 물론 보행자·이륜차까지 검지하고, 교통량·속도·점유율을 초 단위로 산출해 도로의 상태를 숫자로 바꿉니다.</p></article><article class="tv-card" data-reveal style="--td:110ms"><span class="tv-n">02</span><span class="tv-ico"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2.4" y="4" width="19.2" height="12.4" rx="2.4" opacity=".3"/><rect x="5.2" y="6.6" width="13.6" height="4.6" rx="1.2"/><rect x="5.2" y="12.6" width="7.6" height="1.7" rx=".85" opacity=".75"/><path d="M11.1 16.4h1.8v3.1h-1.8z"/><rect x="7.6" y="19.2" width="8.8" height="1.8" rx=".9"/></svg></span><h3>Unified Display</h3><b>통합 표출</b><p>VMS 도로전광판부터 BIT 버스정보안내기, 충전소 전광판까지 표출 장비를 직접 설계·제조합니다. 현장 조건에 맞춰 크기와 표출 방식을 바꿀 수 있습니다.</p></article><article class="tv-card" data-reveal style="--td:220ms"><span class="tv-n">03</span><span class="tv-ico"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="3.2"/><circle cx="4.4" cy="5.4" r="2.2" opacity=".38"/><circle cx="19.6" cy="5.4" r="2.2" opacity=".38"/><circle cx="4.4" cy="18.6" r="2.2" opacity=".38"/><circle cx="19.6" cy="18.6" r="2.2" opacity=".38"/><path d="M6.2 6.9l3.4 3M17.8 6.9l-3.4 3M6.2 17.1l3.4-3M17.8 17.1l-3.4-3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" opacity=".5"/></svg></span><h3>Center Integration</h3><b>센터 연동</b><p>수집한 정보를 관제 상황판과 기관 시스템에 연계합니다. 한 화면에서 전 구간을 감시하고, 돌발상황이 잡히면 곧바로 대응 절차로 이어집니다.</p></article><article class="tv-card" data-reveal style="--td:330ms"><span class="tv-n">04</span><span class="tv-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.3l8.4 3.5v5.9c0 5.3-3.7 8.5-8.4 10.3-4.7-1.8-8.4-5-8.4-10.3V5.8z" opacity=".3"/><path d="M7.9 12.1l2.9 2.9 5.3-5.6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h3>Field Reliability</h3><b>현장 신뢰성</b><p>혹서·혹한과 진동, 낙뢰가 있는 옥외 환경을 전제로 설계합니다. 설치 이후의 점검과 유지보수까지 제조사가 직접 대응합니다.</p></article></div></div>
+</div></section>
+
+<section class="section" style="background:var(--c-bg-soft)"><div class="area">
+<div class="section-head" data-reveal><span class="eyebrow">HOW IT WORKS</span><h2>도로 위 데이터가 정보가 되기까지</h2><p class="lead">센서가 읽은 신호는 세 단계를 거쳐 운전자가 읽을 수 있는 문장이 됩니다.</p></div>
+<div class="flow"><article class="flow-step" data-reveal style="--td:0ms"><span class="fs-no">01</span><span class="fs-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><path d="M6 34V20a4 4 0 014-4h6l3-5h10l3 5h6a4 4 0 014 4v14"/><circle cx="24" cy="26" r="7"/><path d="M6 34h36"/></svg></span><span class="fs-en">COLLECT</span><h3>수집</h3><p>도로 위 장비가 차량의 존재·속도·번호·영상을 초 단위로 읽어들입니다.</p><ul class="fs-tags"><li>VDS 차량검지기</li><li>AVI 차량번호인식</li><li>CCTV 영상검지</li><li>GNSS 프로브</li></ul></article><div class="flow-link" aria-hidden="true"><i></i><i></i><i></i></div><article class="flow-step" data-reveal style="--td:140ms"><span class="fs-no">02</span><span class="fs-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><rect x="16" y="16" width="16" height="16" rx="3"/><path d="M24 6v10M24 32v10M6 24h10M32 24h10M11 11l7 7M30 30l7 7M37 11l-7 7M18 30l-7 7"/></svg></span><span class="fs-en">PROCESS</span><h3>가공</h3><p>센터로 모인 원시 데이터를 AI 딥러닝으로 정제해 소통상태·돌발상황·예측 통행시간으로 바꿉니다.</p><ul class="fs-tags"><li>교통량·점유율 산출</li><li>돌발상황 자동판정</li><li>구간 통행시간 예측</li><li>이력 데이터 축적</li></ul></article><div class="flow-link" aria-hidden="true"><i></i><i></i><i></i></div><article class="flow-step" data-reveal style="--td:280ms"><span class="fs-no">03</span><span class="fs-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><rect x="7" y="12" width="34" height="20" rx="3"/><path d="M14 20h12M14 26h20M24 32v8M16 40h16"/></svg></span><span class="fs-en">PROVIDE</span><h3>제공</h3><p>가공된 정보를 운전자와 시민이 바로 쓸 수 있는 형태로 현장과 단말에 내보냅니다.</p><ul class="fs-tags"><li>VMS 도로전광판</li><li>BIT 버스정보안내</li><li>신호제어 연동</li><li>개방 API·앱</li></ul></article></div>
+</div></section>
+
+<section class="section"><div class="area">
+<div class="section-head" data-reveal><span class="eyebrow">SERVICE DOMAINS</span><h2>7대 서비스 분야</h2></div>
+<div class="svc7-grid"><article class="svc7" data-reveal style="--td:0ms"><span class="n">01</span><h3>교통관리</h3><p>신호·돌발·단속을 하나의 체계로 운영</p></article><article class="svc7" data-reveal style="--td:80ms"><span class="n">02</span><h3>대중교통</h3><p>버스 위치와 도착시간을 시민에게 전달</p></article><article class="svc7" data-reveal style="--td:160ms"><span class="n">03</span><h3>전자지불</h3><p>정차 없이 통행료·요금을 처리</p></article><article class="svc7" data-reveal style="--td:240ms"><span class="n">04</span><h3>교통정보 유통</h3><p>수집한 정보를 기관·민간과 나눠 씀</p></article><article class="svc7" data-reveal style="--td:320ms"><span class="n">05</span><h3>부가정보 제공</h3><p>주차·기상·관광 등 생활정보 연계</p></article><article class="svc7" data-reveal style="--td:400ms"><span class="n">06</span><h3>지능형 차량·도로</h3><p>차량과 도로가 통신으로 협력</p></article><article class="svc7" data-reveal style="--td:480ms"><span class="n">07</span><h3>화물운송</h3><p>화물·위험물 차량의 안전과 효율 관리</p></article></div>
+</div></section>
+
+<section class="section dark-sec dark-sec2"><div class="area">
+  <div class="section-head is-dark" data-reveal><span class="eyebrow">C-ITS</span>
+  <h2>차세대 지능형교통체계</h2>
+  <p class="lead">기존 ITS가 센터에서 정보를 <em>내려주는</em> 구조라면,
+  C-ITS는 차량과 도로, 보행자가 <em>서로 주고받는</em> 구조입니다. 자율주행이 달릴 수 있는 도로의 전제 조건입니다.</p></div>
+<figure class="v2x" data-reveal>
+<svg viewBox="0 0 720 344" role="img" aria-label="C-ITS V2X 통신 개념도 — 차량 간, 차량과 노변장치, 보행자, 관제센터가 서로 정보를 주고받습니다">
+  <defs>
+    <linearGradient id="v2xRoad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1b2550"/><stop offset="1" stop-color="#0b1024"/>
+    </linearGradient>
+    <radialGradient id="v2xGlow"><stop offset="0" stop-color="#5B78E0" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#5B78E0" stop-opacity="0"/></radialGradient>
+  </defs>
+
+  <rect x="0" y="196" width="720" height="148" fill="url(#v2xRoad)"/>
+  <line class="v2x-lane" x1="0" y1="256" x2="720" y2="256"/>
+
+  <!-- 관제센터 -->
+  <g class="v2x-node" transform="translate(600,46)">
+    <circle class="v2x-halo" r="36"/>
+    <g class="v2x-ico" style="--s:2.15" transform="scale(2.15) translate(-12,-12)">
+      <rect x="2" y="3" width="20" height="14" rx="2"/>
+      <path d="M12 17v4"/><path d="M8 21h8"/>
+      <rect x="5" y="6" width="6.2" height="4.4" rx="1"/>
+      <rect x="12.8" y="6" width="6.2" height="2.2" rx="1"/>
+      <rect x="12.8" y="9.8" width="6.2" height="4.6" rx="1"/>
+      <rect x="5" y="12.2" width="6.2" height="2.2" rx="1"/>
+    </g>
+    <text y="52">관제센터</text>
+  </g>
+
+  <!-- 노변기지국(RSU) : 안테나 호가 순서대로 밝아지며 전파를 표현합니다 -->
+  <g class="v2x-node" transform="translate(300,88)">
+    <circle class="v2x-halo" r="34"/>
+    <g class="v2x-ico" style="--s:2.1" transform="scale(2.1) translate(-12,-12)">
+      <path class="v2x-sig s2" d="M4.9 16.1C1 12.2 1 5.8 4.9 1.9"/>
+      <path class="v2x-sig s1" d="M7.8 4.7a6.14 6.14 0 0 0-.8 7.5"/>
+      <circle cx="12" cy="9" r="2"/>
+      <path class="v2x-sig s1" d="M16.2 4.8c2 2 2.26 5.11.8 7.47"/>
+      <path class="v2x-sig s2" d="M19.1 1.9a9.96 9.96 0 0 1 0 14.1"/>
+      <path d="M9.5 18h5"/><path d="m8 22 4-11 4 11"/>
+    </g>
+    <text y="48">노변기지국 RSU</text>
+  </g>
+
+  <!-- 차량 A -->
+  <g class="v2x-node v2x-car" transform="translate(150,231)">
+    <circle class="v2x-halo" r="34"/>
+    <g class="v2x-ico" style="--s:2.4" transform="scale(2.4) translate(-12,-12)">
+      <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/>
+      <circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/>
+    </g>
+    <text y="40">차량 A</text>
+  </g>
+
+  <!-- 차량 B -->
+  <g class="v2x-node v2x-car" transform="translate(470,272)">
+    <circle class="v2x-halo" r="34"/>
+    <g class="v2x-ico" style="--s:2.4" transform="scale(2.4) translate(-12,-12)">
+      <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/>
+      <circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/>
+    </g>
+    <text y="40">차량 B</text>
+  </g>
+
+  <!-- 보행자 -->
+  <g class="v2x-node" transform="translate(80,112)">
+    <circle class="v2x-halo" r="28"/>
+    <g class="v2x-ico" style="--s:1.95" transform="scale(1.95) translate(-12,-12)">
+      <circle cx="12" cy="5" r="1"/><path d="m9 20 3-6 3 6"/>
+      <path d="m6 8 6 2 6-2"/><path d="M12 10v4"/>
+    </g>
+    <text y="38">보행자</text>
+  </g>
+
+  <g class="v2x-links">
+    <path class="v2x-link l1" d="M154 212 C 210 168 250 130 286 104"/>
+    <path class="v2x-link l2" d="M316 106 C 380 152 420 212 460 254"/>
+    <path class="v2x-link l3" d="M176 244 C 262 302 378 300 442 272"/>
+    <path class="v2x-link l4" d="M322 70 C 420 38 520 34 570 44"/>
+    <path class="v2x-link l5" d="M96 122 C 152 156 232 130 282 100"/>
+  </g>
+
+  <g class="v2x-tag">
+    <text x="194" y="150">V2I</text>
+    <text x="364" y="186">V2I</text>
+    <text x="318" y="318">V2V</text>
+    <text x="464" y="26">V2N</text>
+    <text x="174" y="118">V2P</text>
+  </g>
+</svg>
+<figcaption>차량·도로·보행자·센터가 서로 정보를 주고받는 <b>C-ITS</b> 구조. 기존 ITS가 센터에서 내려주는 단방향이라면, C-ITS는 위험을 <b>발생 즉시</b> 서로에게 알립니다.</figcaption>
+</figure>
+<div class="cmp" style="--ha:'기존 ITS · ';--hb:'C-ITS · '"><div class="cmp-head" data-reveal><span class="k"></span><span class="a">기존 ITS</span><span class="b">C-ITS <em>차세대</em></span></div><div class="cmp-row" data-reveal style="--td:0ms"><span class="k">정보의 흐름</span><span class="a">센터가 모아서 내려주는 <b>단방향</b></span><span class="b">차량·인프라가 주고받는 <b>양방향</b></span></div><div class="cmp-row" data-reveal style="--td:90ms"><span class="k">정보의 출처</span><span class="a">노변 검지기·CCTV 등 기반시설</span><span class="b">기반시설 + <b>주행 중인 차량 자체</b></span></div><div class="cmp-row" data-reveal style="--td:180ms"><span class="k">전달 시점</span><span class="a">수집·가공을 거친 뒤 (지연 존재)</span><span class="b">발생 즉시 (수백 ms 단위)</span></div><div class="cmp-row" data-reveal style="--td:270ms"><span class="k">대표 수단</span><span class="a">VMS · BIT · 신호제어</span><span class="b">V2V · V2I · V2P · V2N <span class="nw">(WAVE / LTE-V2X)</span></span></div></div>
+</div></section>
+
+<section class="section"><div class="area">
+<div class="section-head" data-reveal><span class="eyebrow">NECESSITY</span><h2>도입 필요성</h2></div>
+<div class="need" data-reveal><div><b>POINT 01</b><p>사고 다발 지역에 대한 안전성 향상</p></div><div><b>POINT 02</b><p>차량인식 시스템의 정확도 개선</p></div><div><b>POINT 03</b><p>지·정체 구간 등 교통문제에 대한 개선</p></div><div><b>POINT 04</b><p>보행자·이륜차 등 검지 사각지대 해소</p></div></div>
+</div></section>
+
+<section class="section" style="background:var(--c-bg-soft)"><div class="area-box">
+<div class="section-head" data-reveal><span class="eyebrow">SOLUTION</span><h2>주요 솔루션</h2></div>
+<div class="sol-grid" data-reveal-stagger="110"><a class="sol-item has-photo is-link" href="../product/vms.html" data-cursor="제품 보기" data-reveal><div class="fig"><picture><source srcset="../assets/img/prod/vms.webp?v=66ff6e09" type="image/webp"><img src="../assets/img/prod/vms.png?v=66ff6e09" alt="도형식 도로교통 전광판(VMS)" loading="lazy" class="fit-contain"></picture><span class="sol-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div><div class="txt"><h3>도로전광판 (VMS)</h3><p>실시간 교통정보를 운전자에게 전달하는 가변정보 표출 장비</p></div></a><a class="sol-item has-photo is-link" href="../product/ptz.html" data-cursor="제품 보기" data-reveal><div class="fig"><picture><source srcset="../assets/img/prod/ptz.webp?v=66ff6e09" type="image/webp"><img src="../assets/img/prod/ptz.png?v=66ff6e09" alt="PTZ 회전형 지능형 카메라" loading="lazy" class="fit-contain"></picture><span class="sol-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div><div class="txt"><h3>지능형 카메라</h3><p>AI 영상분석으로 차량을 인식하고 교통량 데이터를 수집</p></div></a><a class="sol-item has-photo is-link" href="../product/dashboard.html" data-cursor="제품 보기" data-reveal><div class="fig"><picture><source srcset="../assets/img/dash/traffic.webp?v=66ff6e09" type="image/webp"><img src="../assets/img/dash/traffic.jpg?v=66ff6e09" alt="교통 관제 상황판 화면" loading="lazy" class="fit-cover"></picture><span class="sol-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div><div class="txt"><h3>교통 관제 상황판</h3><p>수집된 정보를 한 화면에서 감시하고 대응하는 관제 소프트웨어</p></div></a><article class="sol-item" data-reveal><div class="fig"><svg viewBox="0 0 100 100" fill="none" stroke="#5B78E0" stroke-width="2"><circle cx="50" cy="50" r="26"/><path d="M50 24v12M50 64v12M24 50h12M64 50h12"/><circle cx="50" cy="50" r="7" fill="#5B78E0"/></svg></div><div class="txt"><h3>현장 제어기</h3><p>검지·표출 장비를 묶어 센터와 통신하는 현장 제어 장치</p></div></article></div>
+</div></section>
+
+<section class="section"><div class="area">
+<div class="section-head" data-reveal><span class="eyebrow">POLICY</span><h2>정책 방향 — ITS 기본계획 2030</h2><p class="lead">국토교통부는 <em>“친환경적이고 안전하면서 단절 없는 사람 중심의 교통서비스 제공”</em>을 비전으로 네 갈래 전략을 제시했습니다.</p></div>
+<div class="pol-grid"><article class="pol" data-reveal style="--td:0ms"><span class="n">전략 01</span><h3>미래 신교통수단의 도입 인프라 구축</h3><p>자율주행차·UAM 등 새로운 이동수단이 달릴 수 있는 도로 기반을 먼저 깝니다.</p></article><article class="pol" data-reveal style="--td:100ms"><span class="n">전략 02</span><h3>첨단기술로 교통안전 사각지대 해소</h3><p>AI 영상분석으로 보행자·이륜차 등 그동안 잡히지 않던 위험을 검지합니다.</p></article><article class="pol" data-reveal style="--td:200ms"><span class="n">전략 03</span><h3>이용자 맞춤형 서비스 제공 기반 마련</h3><p>수집한 교통 데이터를 개방해 민간 서비스로 확장되도록 합니다.</p></article><article class="pol" data-reveal style="--td:300ms"><span class="n">전략 04</span><h3>국내 지능형교통체계의 해외진출 지원</h3><p>국내에서 검증된 ITS 기술을 수출 산업으로 키웁니다.</p></article></div>
+<p class="src" data-reveal>자료: 국토교통부 「지능형교통체계 기본계획 2030」(2021) · 국토교통부 ITS 정책자료</p>
+</div></section>
+<section class="section cta">
+  <div class="area" data-reveal>
+    <h2>교통 시스템 도입을 검토 중이신가요?</h2>
+    <p>사업 요구사항을 알려주시면 상림기술이 최적의 솔루션을 제안드립니다.</p>
+    <a href="../contact.html" class="btn btn-primary">문의하기
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
+</main>
+
+<footer class="footer" id="footer">
+  <div class="area-wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img class="footer-logo" src="../assets/img/logo-v-white.png" alt="(주)상림기술">
+        <p>축적된 기술력으로 더 안전한 길과<br>더 나은 교통시스템을 만듭니다.</p>
+        <p style="margin-top:16px;font-size:.86rem">
+          T. <a href="tel:0220831333">02-2083-1333</a><br>
+          E. <a href="mailto:ceo@sanglim.co.kr">ceo@sanglim.co.kr</a></p>
+      </div>
+      <nav class="footer-map"><div><h4>회사소개</h4><ul><li><a href="../company/greeting.html">인사말</a></li><li><a href="../company/history.html">연혁</a></li><li><a href="../company/organization.html">조직도</a></li><li><a href="../company/record.html">구축사례</a></li><li><a href="../company/certification.html">인증현황</a></li><li><a href="../company/partners.html">파트너사</a></li><li><a href="../company/location.html">오시는 길</a></li></ul></div><div><h4>사업분야</h4><ul><li><a href="../business/its.html">지능형 교통체계</a></li><li><a href="../business/bis.html">버스정보 안내시스템</a></li><li><a href="../business/evs.html">긴급차량 우선신호 시스템</a></li><li><a href="../business/ssz.html">스마트 스쿨존 시스템</a></li></ul></div><div><h4>주요제품</h4><ul><li><a href="../product/vms.html">도로교통 전광판(VMS)</a></li><li><a href="../product/bit.html">버스정보안내 전광판(BIT)</a></li><li><a href="../product/ecs.html">전기차 충전소 전광판</a></li><li><a href="../product/gnss.html">초정밀 모듈(GNSS)</a></li><li><a href="../product/ptz.html">PTZ 카메라</a></li><li><a href="../product/dashboard.html">상황판(대시보드)</a></li></ul></div><div><h4>오시는 길</h4><ul><li>본사 · SK테크노파크 D동 1507호</li><li>공장 · SK테크노파크 D동 1508호</li><li>경기도 광명시 하안로 60</li></ul></div></nav>
+    </div>
+    <div class="footer-bottom">
+      <span>(주)상림기술 · 대표이사 임상일 · 사업자등록번호 197-87-02040<br>경기도 광명시 하안로 60, 광명 SK테크노파크 D동 1507호</span>
+      <span>Copyright &copy; SangLim Technologies. All rights Reserved.</span>
+    </div>
+  </div>
+</footer>
+<button class="to-top" id="totop" aria-label="맨 위로">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
+
+<!-- 상담 위젯 -->
+<div class="cw" id="cw" data-base="../" data-tel="02-2083-1333" data-mail="ceo@sanglim.co.kr" data-lang="ko">
+  <button class="cw-fab" id="cwFab" type="button" aria-expanded="false" aria-controls="cwPanel"
+          aria-label="온라인 상담 열기">
+    <svg class="cw-i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.5 9.5 0 0 1-2.9-.4L3 21l1.6-4.6A8.3 8.3 0 0 1 3.6 11.5 8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4z"/>
+    </svg>
+    <svg class="cw-i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"
+         stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    <span class="cw-ping" aria-hidden="true"></span>
+  </button>
+
+  <div class="cw-tip" id="cwTip" role="note">무엇을 도와드릴까요?<i></i></div>
+
+  <section class="cw-panel" id="cwPanel" role="dialog" aria-modal="false" aria-label="상림기술 상담" hidden>
+    <header class="cw-head">
+      <span class="cw-ava" aria-hidden="true">
+        <img src="../assets/img/logo-v-white.png" alt="">
+      </span>
+      <div class="cw-who"><b>상림기술 상담</b><span><i></i>보통 1영업일 이내 회신</span></div>
+      <button class="cw-min" id="cwMin" type="button" aria-label="닫기">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><path d="M6 12h12"/></svg>
+      </button>
+    </header>
+
+    <div class="cw-log" id="cwLog" role="log" aria-live="polite"></div>
+
+    <div class="cw-foot">
+      <div class="cw-chips" id="cwChips"></div>
+      <div class="cw-quick">
+        <a class="cw-q" href="tel:0220831333"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>전화</a>
+        <a class="cw-q" href="mailto:ceo@sanglim.co.kr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg>이메일</a>
+        <a class="cw-q" href="../contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg>문의 양식</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script src="../vendor/swiper-bundle.min.js"></script>
+<script src="../vendor/gsap.min.js"></script>
+<script src="../vendor/ScrollTrigger.min.js"></script>
+<script src="../assets/app.js?v=66ff6e09"></script>
+</body>
+</html>

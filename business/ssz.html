@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>스마트 스쿨존 시스템 | (주)상림기술</title>
+<meta name="description" content="AI 영상분석 기반 어린이보호구역 보행자 안전 시스템.">
+<meta http-equiv="Cache-Control" content="no-cache">
+<link rel="icon" href="../assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta name="theme-color" content="#1F2A5A">
+<script>
+/* 배포 감시 — 서버가 캐시 헤더를 안 보내는 환경(python -m http.server 등)에서
+   브라우저가 옛 HTML 을 계속 쓰는 일을 막습니다. 빌드 번호가 다르면 한 번만 새로고침. */
+window.__BUILD__="66ff6e09";(function(){try{
+ fetch("../version.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json();})
+  .then(function(j){
+    if(!j||!j.build||j.build===window.__BUILD__) return;
+    /* 빌드 번호별로 한 번씩만 새로고침 — 예전엔 세션당 한 번뿐이라
+       두 번째 수정부터는 옛 화면이 그대로 남았습니다 */
+    var k="sl-rl:"+j.build;
+    if(sessionStorage.getItem(k)) return;
+    sessionStorage.setItem(k,"1");
+    location.reload();
+  }).catch(function(){});
+ }catch(e){}})();
+</script>
+<link rel="alternate" hreflang="ko" href="../business/ssz.html">
+<link rel="alternate" hreflang="en" href="../en/business/ssz.html">
+<link rel="stylesheet" href="../vendor/swiper-bundle.min.css">
+<link rel="stylesheet" href="../assets/style.css?v=66ff6e09">
+<noscript><style>[data-reveal]{opacity:1!important;translate:none!important}</style></noscript>
+</head>
+<body class="has-sub">
+
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="../index.html" class="logo">
+      <img class="lg-white" src="../assets/img/logo-h-white.png" alt="(주)상림기술">
+      <img class="lg-color" src="../assets/img/logo-h.png" alt="(주)상림기술">
+    </a>
+    <nav><ul class="gnb"><li><a href="../company/greeting.html">회사소개</a><div class="gnb-2dep"><ul><li><a href="../company/greeting.html">인사말</a></li><li><a href="../company/history.html">연혁</a></li><li><a href="../company/organization.html">조직도</a></li><li><a href="../company/record.html">구축사례</a></li><li><a href="../company/certification.html">인증현황</a></li><li><a href="../company/partners.html">파트너사</a></li><li><a href="../company/location.html">오시는 길</a></li></ul></div></li><li class="cur"><a href="../business/its.html">사업분야</a><div class="gnb-2dep"><ul><li><a href="../business/its.html">지능형 교통체계</a></li><li><a href="../business/bis.html">버스정보 안내시스템</a></li><li><a href="../business/evs.html">긴급차량 우선신호 시스템</a></li><li><a href="../business/ssz.html">스마트 스쿨존 시스템</a></li></ul></div></li><li><a href="../product/vms.html">주요제품</a><div class="gnb-2dep"><ul><li><a href="../product/vms.html">도로교통 전광판(VMS)</a></li><li><a href="../product/bit.html">버스정보안내 전광판(BIT)</a></li><li><a href="../product/ecs.html">전기차 충전소 전광판</a></li><li><a href="../product/gnss.html">초정밀 모듈(GNSS)</a></li><li><a href="../product/ptz.html">PTZ 카메라</a></li><li><a href="../product/dashboard.html">상황판(대시보드)</a></li></ul></div></li><li><a href="../contact.html">문의하기</a></li></ul></nav>
+    <div class="header-util">
+      <div class="lang"><a href="../business/ssz.html" class="on">KR</a><span>/</span><a href="../en/business/ssz.html">EN</a></div>
+      <button class="navtog" id="navtog" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="drawer-dim" id="dim"></div>
+<aside class="drawer" id="drawer" aria-label="모바일 메뉴"></aside>
+
+<main id="top">
+<section class="subvis">
+  <span class="orb o1"></span><span class="orb o2"></span>
+  <div class="subvis-inner">
+    <h1>스마트 스쿨존 시스템</h1>
+    <div class="crumb"><a href="../index.html">홈</a><i></i><a href="../business/its.html">사업분야</a><i></i><span class="cur">스마트 스쿨존 시스템</span></div>
+  </div>
+</section>
+<nav class="subnav"><ul><li><a href="../business/its.html">지능형 교통체계</a></li><li><a href="../business/bis.html">버스정보 안내시스템</a></li><li><a href="../business/evs.html">긴급차량 우선신호 시스템</a></li><li><a href="../business/ssz.html" class="on">스마트 스쿨존 시스템</a></li></ul></nav>
+<section class="section dark-sec"><div class="area">
+  <div class="section-head is-dark" data-reveal><span class="eyebrow">SMART SCHOOL ZONE</span>
+  <h2>아이를 보기 전에 먼저 알립니다</h2>
+  <p class="lead">어린이 보호구역 내 위험한 상황을 LED전광판으로 알려 충돌과 사고를 예방하는
+  안전 보행 서비스입니다. 운전자가 아이를 발견했을 때는 이미 늦습니다 &mdash;
+  카메라가 먼저 보고, 전광판이 먼저 알리는 구조입니다.</p></div>
+  <figure class="sszv" data-reveal>
+<svg viewBox="0 0 720 420" role="img" aria-label="스마트 스쿨존 개념도 — AI 카메라가 횡단보도의 보행자를 감지하면 전광판이 즉시 경고를 표출해 운전자가 미리 감속합니다">
+  <defs>
+    <linearGradient id="sszRoad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1b2550"/><stop offset="1" stop-color="#0b1024"/>
+    </linearGradient>
+    <radialGradient id="sszGlow"><stop offset="0" stop-color="#5B78E0" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#5B78E0" stop-opacity="0"/></radialGradient>
+    <radialGradient id="sszWarm"><stop offset="0" stop-color="#FFC24B" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#FFC24B" stop-opacity="0"/></radialGradient>
+    <linearGradient id="sszBeam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8FA4F0" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#8FA4F0" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 도로 · 중앙선 (우측통행 : 왼쪽→오른쪽 주행은 중앙선 아래 차로) -->
+  <rect x="0" y="244" width="720" height="176" fill="url(#sszRoad)"/>
+  <line class="sszv-lane" x1="0" y1="316" x2="720" y2="316"/>
+
+  <!-- 스쿨존 노면 표시 -->
+  <rect class="sszv-zone" x="96" y="244" width="560" height="176"/>
+
+  <!-- 횡단보도 -->
+  <g class="sszv-cw">
+    <rect x="404" y="248" width="13" height="168"/>
+    <rect x="422" y="248" width="13" height="168"/>
+    <rect x="440" y="248" width="13" height="168"/>
+    <rect x="458" y="248" width="13" height="168"/>
+  </g>
+
+  <!-- AI 카메라 검지 영역 -->
+  <path class="sszv-beam" d="M300 176 L488 244 L376 244 Z"/>
+
+  <!-- 스마트 전광판 -->
+  <g class="sszv-node" transform="translate(120,160)">
+    <circle class="sszv-halo is-warm" r="46"/>
+    <rect class="sszv-panel" x="-52" y="-34" width="104" height="60" rx="8"/>
+    <text class="sszv-warn" y="-11">보행자<tspan x='0' dy='18'>주의</tspan></text>
+    <path class="sszv-pole" d="M0 26v58"/>
+    <text y="58">스마트 전광판</text>
+  </g>
+
+  <!-- AI 카메라 -->
+  <g class="sszv-node" transform="translate(300,150)">
+    <circle class="sszv-halo" r="34"/>
+    <g class="sszv-ico" style="--s:2.1" transform="scale(2.1) translate(-12,-12)">
+      <path d="M16.75 12h3.632a1 1 0 0 1 .894 1.447l-2.034 4.069a1 1 0 0 1-1.708.134l-2.124-2.97"/>
+      <path d="M17.106 9.053a1 1 0 0 1 .447 1.341l-3.106 6.211a1 1 0 0 1-1.342.447L3.61 12.3a2.92 2.92 0 0 1-1.3-3.91L3.69 5.6a2.92 2.92 0 0 1 3.92-1.3z"/>
+      <path d="M2 19h3.76a2 2 0 0 0 1.8-1.1L9 15"/><path d="M2 21v-4"/>
+      <circle class="sszv-lens" cx="7" cy="9" r="1.1"/>
+    </g>
+    <path class="sszv-pole" d="M0 30v64"/>
+    <text y="58">AI 영상 검지</text>
+  </g>
+
+  <!-- 제한속도 30 -->
+  <g class="sszv-node" transform="translate(602,158)">
+    <circle class="sszv-halo" r="34"/>
+    <circle class="sszv-spd" cx="0" cy="-6" r="26"/>
+    <text class="sszv-spdn" y="4">30</text>
+    <path class="sszv-pole" d="M0 22v64"/>
+    <text y="52">제한속도 30</text>
+  </g>
+
+  <!-- 횡단보도를 건너는 보행자 -->
+  <g class="sszv-node sszv-ped" transform="translate(436,282)">
+    <circle class="sszv-halo is-warm" r="30"/>
+    <g class="sszv-ico" style="--s:2" transform="scale(2) translate(-12,-12)">
+      <circle cx="12" cy="5" r="1"/><path d="m9 20 3-6 3 6"/>
+      <path d="m6 8 6 2 6-2"/><path d="M12 10v4"/>
+    </g>
+    <rect class="sszv-box" x="-26" y="-30" width="52" height="60" rx="4"/>
+    <text y="-44">보행자 감지</text>
+  </g>
+
+  <!-- 접근 차량 -->
+  <g class="sszv-node" transform="translate(152,362)">
+    <circle class="sszv-halo" r="34"/>
+    <g class="sszv-ico" style="--s:2.3" transform="scale(2.3) translate(-12,-12)">
+      <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/>
+      <circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/>
+    </g>
+    <text y="46">접근 차량</text>
+  </g>
+
+  <!-- 카메라 → 전광판 -->
+  <g class="sszv-links">
+    <path class="sszv-link l1" d="M272 132 C 232 100 176 100 138 124"/>
+  </g>
+  <g class="sszv-tag">
+    <text x="204" y="92">즉시 표출</text>
+  </g>
+</svg>
+<figcaption>카메라가 보행자를 잡는 순간 전광판이 켜집니다. 운전자가 아이를 <b>보기 전에</b> 먼저 알게 만드는 것이 스마트 스쿨존의 핵심입니다.</figcaption>
+</figure>
+</div></section>
+
+<section class="section dark-sec dark-sec2"><div class="area">
+  <div class="section-head is-dark" data-reveal><span class="eyebrow">ON THE ROAD</span>
+  <h2>보호구역에 서는 전광판</h2>
+  <p class="lead">스마트 스쿨존 전광판은 아이와 운전자가 실제로 마주하는 유일한 장비입니다.
+  읽히지 않으면 시스템 전체가 무의미해집니다.</p></div>
+  <div class="dsol">
+    <figure class="dsol-fig" data-reveal data-speed="0.06">
+      <span class="dsol-glow"></span><picture><source srcset="../assets/img/prod/ssz2.webp?v=66ff6e09" type="image/webp"><img src="../assets/img/prod/ssz2.png?v=66ff6e09" alt="어린이보호구역 스마트 스쿨존 안내" loading="lazy" data-fit="cover"></picture>
+    </figure>
+    <div class="dsol-body">
+      <p class="dsol-lead" data-reveal>평소에는 보호구역임을 알리고, 위험한 순간에는 경고로 바뀝니다.</p>
+      <div class="dspec-grid"><article class="dspec" data-reveal style="--td:0ms"><span class="n">01</span><h3>보행자를 보면 바로 켜집니다</h3><p>평소에는 보호구역 안내를 표출하다가, 카메라가 보행자를 잡는 순간 경고 화면으로 바뀝니다. 운전자가 아이를 보기 전에 먼저 알게 됩니다.</p></article><article class="dspec" data-reveal style="--td:110ms"><span class="n">02</span><h3>고휘도 LED · 옥외 설계</h3><p>직사광선 아래에서도 읽히는 고휘도 LED를 쓰고, 혹서·혹한과 진동, 낙뢰가 있는 옥외를 전제로 설계합니다.</p></article><article class="dspec" data-reveal style="--td:220ms"><span class="n">03</span><h3>문자와 음성 동시 안내</h3><p>표출과 함께 음성으로도 안내해, 운전자와 보행자 양쪽에 같은 정보가 닿게 만듭니다.</p></article><article class="dspec" data-reveal style="--td:330ms"><span class="n">04</span><h3>단속 시스템과 연계</h3><p>불법 주정차와 정지선 위반이 같은 장비에서 자료로 남아, 안내에서 끝나지 않고 실제 개선으로 이어집니다.</p></article></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="section" style="background:var(--c-bg-soft)"><div class="area">
+<div class="section-head" data-reveal><span class="eyebrow">HOW IT WORKS</span><h2>카메라가 본 것이 경고가 되기까지</h2><p class="lead">보호구역 안의 한 장면이 운전자의 눈앞 문장으로 바뀌는 세 단계.</p></div>
+<div class="flow"><article class="flow-step" data-reveal style="--td:0ms"><span class="fs-no">01</span><span class="fs-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><path d="M6 34V20a4 4 0 014-4h6l3-5h10l3 5h6a4 4 0 014 4v14"/><circle cx="24" cy="26" r="7"/><path d="M6 34h36"/></svg></span><span class="fs-en">AT THE CROSSING</span><h3>검지</h3><p>보호구역 카메라가 횡단보도와 그 주변을 상시 봅니다. 사람과 차를 구분해 읽습니다.</p><ul class="fs-tags"><li>AI 영상분석</li><li>보행자 검지</li><li>차량 인식</li><li>주야간 대응</li></ul></article><div class="flow-link" aria-hidden="true"><i></i><i></i><i></i></div><article class="flow-step" data-reveal style="--td:140ms"><span class="fs-no">02</span><span class="fs-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><rect x="16" y="16" width="16" height="16" rx="3"/><path d="M24 6v10M24 32v10M6 24h10M32 24h10M11 11l7 7M30 30l7 7M37 11l-7 7M18 30l-7 7"/></svg></span><span class="fs-en">ON SITE</span><h3>판단</h3><p>보행 의도와 차량 접근을 함께 보고, 경고를 낼지 단속 자료로 남길지 판단합니다.</p><ul class="fs-tags"><li>보행 의도 판정</li><li>접근 차량 속도</li><li>위험 상황 분류</li><li>이벤트 기록</li></ul></article><div class="flow-link" aria-hidden="true"><i></i><i></i><i></i></div><article class="flow-step" data-reveal style="--td:280ms"><span class="fs-no">03</span><span class="fs-ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><rect x="7" y="12" width="34" height="20" rx="3"/><path d="M14 20h12M14 26h20M24 32v8M16 40h16"/></svg></span><span class="fs-en">TO THE DRIVER</span><h3>표출</h3><p>전광판이 즉시 경고를 띄우고, 위반은 자료로 남아 단속 시스템으로 넘어갑니다.</p><ul class="fs-tags"><li>LED 경고 표출</li><li>음성 안내</li><li>불법 주정차</li><li>정지선 위반</li></ul></article></div>
+</div></section>
+
+<section class="section"><div class="area">
+<div class="section-head" data-reveal><span class="eyebrow">AI DETECTION</span><h2>AI 영상분석이 잡아내는 것들</h2><p class="lead">보행자 주의부터 정지선 준수·불법 주정차·양보 운전까지, 한 화면에서 상황별로 다르게 표출합니다.</p></div>
+<figure class="figbox" data-reveal><picture><source srcset="../assets/img/prod/ssz.webp?v=66ff6e09" type="image/webp"><img src="../assets/img/prod/ssz.png?v=66ff6e09" alt="스마트 스쿨존 안전시스템 표출 화면" loading="lazy" data-fit="cover"></picture>
+<figcaption>상황에 따라 표출 문구와 픽토그램이 바뀝니다 · 어린이보호구역 스마트 스쿨존 표출 화면</figcaption></figure>
+</div></section>
+
+<section class="section dark-sec dark-sec2"><div class="area">
+  <div class="section-head is-dark" data-reveal><span class="eyebrow">WHY AI</span>
+  <h2>지나가는 것을 세는 것과, 보고 있는 것의 차이</h2>
+  <p class="lead">같은 자리에 장비를 두어도, <em>지나갔는지</em>를 세는 것과
+  <em>무엇이 있는지</em>를 보는 것은 전혀 다른 결과를 만듭니다.</p></div>
+<div class="cmp" style="--ha:'기존 검지 방식 · ';--hb:'AI 영상분석 · '"><div class="cmp-head" data-reveal><span class="k"></span><span class="a">기존 검지 방식</span><span class="b">AI 영상분석 <em>적용 확대</em></span></div><div class="cmp-row" data-reveal style="--td:0ms"><span class="k">감지 방식</span><span class="a">지정된 지점을 지날 때만 반응</span><span class="b">화면 전체를 계속 보고 <b>사람과 차를 구분</b></span></div><div class="cmp-row" data-reveal style="--td:90ms"><span class="k">알리는 시점</span><span class="a">이미 도로에 들어선 뒤</span><span class="b">보행 의도를 읽어 <b>진입 전에</b></span></div><div class="cmp-row" data-reveal style="--td:180ms"><span class="k">남는 자료</span><span class="a">통과 여부 정도</span><span class="b">영상·시각·유형이 함께 남아 단속 연계</span></div><div class="cmp-row" data-reveal style="--td:270ms"><span class="k">확장</span><span class="a">기능마다 장비를 따로 설치</span><span class="b">한 대로 <span class="nw">감지 · 경고 · 단속</span>을 함께</span></div></div>
+</div></section>
+
+<section class="section"><div class="area">
+<div class="section-head" data-reveal><span class="eyebrow">NECESSITY</span><h2>도입 필요성</h2></div>
+<div class="need" data-reveal><div><b>POINT 01</b><p>사고 다발 지역에 대한 안정성 향상</p></div><div><b>POINT 02</b><p>차량인식 시스템의 정확도 개선</p></div><div><b>POINT 03</b><p>지·정체 구간 등 교통문제에 대한 개선</p></div><div><b>POINT 04</b><p>안내에서 끝나지 않는 위반 단속 연계</p></div></div>
+</div></section>
+
+<section class="section" style="background:var(--c-bg-soft)"><div class="area-box">
+<div class="section-head" data-reveal><span class="eyebrow">SOLUTION</span><h2>주요 솔루션</h2></div>
+<div class="sol-grid" data-reveal-stagger="110"><article class="sol-item has-photo" data-reveal><div class="fig"><picture><source srcset="../assets/img/prod/ssz2.webp?v=66ff6e09" type="image/webp"><img src="../assets/img/prod/ssz2.png?v=66ff6e09" alt="어린이보호구역 스마트 스쿨존 전광판" loading="lazy" class="fit-cover"></picture></div><div class="txt"><h3>스마트스쿨존 전광판</h3><p>보행자 감지 시 운전자에게 즉시 경고를 표출</p></div></article><article class="sol-item has-photo" data-reveal><div class="fig"><picture><source srcset="../assets/img/prod/ssz.webp?v=66ff6e09" type="image/webp"><img src="../assets/img/prod/ssz.png?v=66ff6e09" alt="스마트 스쿨존 표출 화면 모음" loading="lazy" class="fit-cover"></picture></div><div class="txt"><h3>스마트스쿨존 시스템 솔루션</h3><p>AI 영상분석 기반 보행자 감지 및 위반 단속 연동</p></div></article><a class="sol-item has-photo is-link" href="../product/ptz.html" data-cursor="제품 보기" data-reveal><div class="fig"><picture><source srcset="../assets/img/prod/ptz.webp?v=66ff6e09" type="image/webp"><img src="../assets/img/prod/ptz.png?v=66ff6e09" alt="PTZ 회전형 지능형 카메라" loading="lazy" class="fit-contain"></picture><span class="sol-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div><div class="txt"><h3>지능형 카메라</h3><p>보호구역 전체를 상시 감시하는 AI 영상 검지 장비</p></div></a></div>
+</div></section>
+<section class="section cta">
+  <div class="area" data-reveal>
+    <h2>교통 시스템 도입을 검토 중이신가요?</h2>
+    <p>사업 요구사항을 알려주시면 상림기술이 최적의 솔루션을 제안드립니다.</p>
+    <a href="../contact.html" class="btn btn-primary">문의하기
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
+</main>
+
+<footer class="footer" id="footer">
+  <div class="area-wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img class="footer-logo" src="../assets/img/logo-v-white.png" alt="(주)상림기술">
+        <p>축적된 기술력으로 더 안전한 길과<br>더 나은 교통시스템을 만듭니다.</p>
+        <p style="margin-top:16px;font-size:.86rem">
+          T. <a href="tel:0220831333">02-2083-1333</a><br>
+          E. <a href="mailto:ceo@sanglim.co.kr">ceo@sanglim.co.kr</a></p>
+      </div>
+      <nav class="footer-map"><div><h4>회사소개</h4><ul><li><a href="../company/greeting.html">인사말</a></li><li><a href="../company/history.html">연혁</a></li><li><a href="../company/organization.html">조직도</a></li><li><a href="../company/record.html">구축사례</a></li><li><a href="../company/certification.html">인증현황</a></li><li><a href="../company/partners.html">파트너사</a></li><li><a href="../company/location.html">오시는 길</a></li></ul></div><div><h4>사업분야</h4><ul><li><a href="../business/its.html">지능형 교통체계</a></li><li><a href="../business/bis.html">버스정보 안내시스템</a></li><li><a href="../business/evs.html">긴급차량 우선신호 시스템</a></li><li><a href="../business/ssz.html">스마트 스쿨존 시스템</a></li></ul></div><div><h4>주요제품</h4><ul><li><a href="../product/vms.html">도로교통 전광판(VMS)</a></li><li><a href="../product/bit.html">버스정보안내 전광판(BIT)</a></li><li><a href="../product/ecs.html">전기차 충전소 전광판</a></li><li><a href="../product/gnss.html">초정밀 모듈(GNSS)</a></li><li><a href="../product/ptz.html">PTZ 카메라</a></li><li><a href="../product/dashboard.html">상황판(대시보드)</a></li></ul></div><div><h4>오시는 길</h4><ul><li>본사 · SK테크노파크 D동 1507호</li><li>공장 · SK테크노파크 D동 1508호</li><li>경기도 광명시 하안로 60</li></ul></div></nav>
+    </div>
+    <div class="footer-bottom">
+      <span>(주)상림기술 · 대표이사 임상일 · 사업자등록번호 197-87-02040<br>경기도 광명시 하안로 60, 광명 SK테크노파크 D동 1507호</span>
+      <span>Copyright &copy; SangLim Technologies. All rights Reserved.</span>
+    </div>
+  </div>
+</footer>
+<button class="to-top" id="totop" aria-label="맨 위로">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
+
+<!-- 상담 위젯 -->
+<div class="cw" id="cw" data-base="../" data-tel="02-2083-1333" data-mail="ceo@sanglim.co.kr" data-lang="ko">
+  <button class="cw-fab" id="cwFab" type="button" aria-expanded="false" aria-controls="cwPanel"
+          aria-label="온라인 상담 열기">
+    <svg class="cw-i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.5 9.5 0 0 1-2.9-.4L3 21l1.6-4.6A8.3 8.3 0 0 1 3.6 11.5 8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4z"/>
+    </svg>
+    <svg class="cw-i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"
+         stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    <span class="cw-ping" aria-hidden="true"></span>
+  </button>
+
+  <div class="cw-tip" id="cwTip" role="note">무엇을 도와드릴까요?<i></i></div>
+
+  <section class="cw-panel" id="cwPanel" role="dialog" aria-modal="false" aria-label="상림기술 상담" hidden>
+    <header class="cw-head">
+      <span class="cw-ava" aria-hidden="true">
+        <img src="../assets/img/logo-v-white.png" alt="">
+      </span>
+      <div class="cw-who"><b>상림기술 상담</b><span><i></i>보통 1영업일 이내 회신</span></div>
+      <button class="cw-min" id="cwMin" type="button" aria-label="닫기">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><path d="M6 12h12"/></svg>
+      </button>
+    </header>
+
+    <div class="cw-log" id="cwLog" role="log" aria-live="polite"></div>
+
+    <div class="cw-foot">
+      <div class="cw-chips" id="cwChips"></div>
+      <div class="cw-quick">
+        <a class="cw-q" href="tel:0220831333"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>전화</a>
+        <a class="cw-q" href="mailto:ceo@sanglim.co.kr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg>이메일</a>
+        <a class="cw-q" href="../contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg>문의 양식</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script src="../vendor/swiper-bundle.min.js"></script>
+<script src="../vendor/gsap.min.js"></script>
+<script src="../vendor/ScrollTrigger.min.js"></script>
+<script src="../assets/app.js?v=66ff6e09"></script>
+</body>
+</html>

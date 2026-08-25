@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>상황판(대시보드) | (주)상림기술</title>
+<meta name="description" content="교통·안전·신호·버스 데이터를 한 화면에 모으는 ITS 관제 상황판입니다.">
+<meta http-equiv="Cache-Control" content="no-cache">
+<link rel="icon" href="../assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta name="theme-color" content="#1F2A5A">
+<script>
+/* 배포 감시 — 서버가 캐시 헤더를 안 보내는 환경(python -m http.server 등)에서
+   브라우저가 옛 HTML 을 계속 쓰는 일을 막습니다. 빌드 번호가 다르면 한 번만 새로고침. */
+window.__BUILD__="66ff6e09";(function(){try{
+ fetch("../version.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json();})
+  .then(function(j){
+    if(!j||!j.build||j.build===window.__BUILD__) return;
+    /* 빌드 번호별로 한 번씩만 새로고침 — 예전엔 세션당 한 번뿐이라
+       두 번째 수정부터는 옛 화면이 그대로 남았습니다 */
+    var k="sl-rl:"+j.build;
+    if(sessionStorage.getItem(k)) return;
+    sessionStorage.setItem(k,"1");
+    location.reload();
+  }).catch(function(){});
+ }catch(e){}})();
+</script>
+<link rel="alternate" hreflang="ko" href="../product/dashboard.html">
+<link rel="alternate" hreflang="en" href="../en/product/dashboard.html">
+<link rel="stylesheet" href="../vendor/swiper-bundle.min.css">
+<link rel="stylesheet" href="../assets/style.css?v=66ff6e09">
+<noscript><style>[data-reveal]{opacity:1!important;translate:none!important}</style></noscript>
+</head>
+<body class="has-sub">
+
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="../index.html" class="logo">
+      <img class="lg-white" src="../assets/img/logo-h-white.png" alt="(주)상림기술">
+      <img class="lg-color" src="../assets/img/logo-h.png" alt="(주)상림기술">
+    </a>
+    <nav><ul class="gnb"><li><a href="../company/greeting.html">회사소개</a><div class="gnb-2dep"><ul><li><a href="../company/greeting.html">인사말</a></li><li><a href="../company/history.html">연혁</a></li><li><a href="../company/organization.html">조직도</a></li><li><a href="../company/record.html">구축사례</a></li><li><a href="../company/certification.html">인증현황</a></li><li><a href="../company/partners.html">파트너사</a></li><li><a href="../company/location.html">오시는 길</a></li></ul></div></li><li><a href="../business/its.html">사업분야</a><div class="gnb-2dep"><ul><li><a href="../business/its.html">지능형 교통체계</a></li><li><a href="../business/bis.html">버스정보 안내시스템</a></li><li><a href="../business/evs.html">긴급차량 우선신호 시스템</a></li><li><a href="../business/ssz.html">스마트 스쿨존 시스템</a></li></ul></div></li><li class="cur"><a href="../product/vms.html">주요제품</a><div class="gnb-2dep"><ul><li><a href="../product/vms.html">도로교통 전광판(VMS)</a></li><li><a href="../product/bit.html">버스정보안내 전광판(BIT)</a></li><li><a href="../product/ecs.html">전기차 충전소 전광판</a></li><li><a href="../product/gnss.html">초정밀 모듈(GNSS)</a></li><li><a href="../product/ptz.html">PTZ 카메라</a></li><li><a href="../product/dashboard.html">상황판(대시보드)</a></li></ul></div></li><li><a href="../contact.html">문의하기</a></li></ul></nav>
+    <div class="header-util">
+      <div class="lang"><a href="../product/dashboard.html" class="on">KR</a><span>/</span><a href="../en/product/dashboard.html">EN</a></div>
+      <button class="navtog" id="navtog" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="drawer-dim" id="dim"></div>
+<aside class="drawer" id="drawer" aria-label="모바일 메뉴"></aside>
+
+<main id="top">
+<section class="subvis">
+  <span class="orb o1"></span><span class="orb o2"></span>
+  <div class="subvis-inner">
+    <h1>상황판(대시보드)</h1>
+    <div class="crumb"><a href="../index.html">홈</a><i></i><a href="../product/vms.html">주요제품</a><i></i><span class="cur">상황판(대시보드)</span></div>
+  </div>
+</section>
+<nav class="subnav"><ul><li><a href="../product/vms.html">도로교통 전광판(VMS)</a></li><li><a href="../product/bit.html">버스정보안내 전광판(BIT)</a></li><li><a href="../product/ecs.html">전기차 충전소 전광판</a></li><li><a href="../product/gnss.html">초정밀 모듈(GNSS)</a></li><li><a href="../product/ptz.html">PTZ 카메라</a></li><li><a href="../product/dashboard.html" class="on">상황판(대시보드)</a></li></ul></nav>
+<section class="dz" id="dashZoom">
+  <div class="dz-sticky">
+    <!-- 1) 거대한 키워드 -->
+    <div class="dz-kw" id="dzKw">
+      <span class="dz-kick">ITS CONTROL WALL</span>
+      <h2><span class="l1">도시 전체를</span><span class="l2"><em>한 화면</em>에서 봅니다</span></h2>
+      <p>흩어져 있던 교통·안전·신호·버스 데이터를 하나의 상황판으로 모읍니다. 관제 요원이 화면을 옮겨 다니지 않아도, 지금 도시에서 무슨 일이 벌어지는지 보입니다.</p>
+    </div>
+    <!-- 2) 커지는 상황판 -->
+    <div class="dz-stage">
+      <div class="dz-wall" id="dzWall">
+        <picture><source srcset="../assets/img/dash/integrated-hi.webp" type="image/webp">
+        <img src="../assets/img/dash/integrated-hi.jpg" alt="상황판 (대시보드)" id="dzImg"></picture>
+        <span class="dz-focus" id="dzFocus"></span>
+      </div>
+    </div>
+    <!-- 3) 패널별 설명 -->
+    <div class="dz-caps" id="dzCaps">
+      <div class="dz-cap dz-full" data-i="0"><h3>한 대의 상황판, 다섯 개의 화면</h3></div>
+      <div class="dz-cap" data-i="1"><span class="dz-n">01</span><h3>시스템 운영현황</h3><p>스마트교차로 · CCTV · VDS부터 전광판 · 버스까지, 운영 중인 모든 장비를 종류별로 집계합니다.</p></div><div class="dz-cap" data-i="2"><span class="dz-n">02</span><h3>GIS 통합지도</h3><p>지자체 전역의 교통시설물을 지도 위에. 옆의 버튼으로 시나리오를 즉시 전환합니다.</p></div><div class="dz-cap" data-i="3"><span class="dz-n">03</span><h3>미니 대시보드</h3><p>실시간 신호개방, 협력 데이터 연계, 홈페이지 운영 상태를 상시 표출합니다.</p></div><div class="dz-cap" data-i="4"><span class="dz-n">04</span><h3>교통정보 제공현황</h3><p>도로안내 전광판이 지금 무엇을 표출하고 있는지, 도로별 소통 상태와 함께 확인합니다.</p></div>
+    </div>
+    <div class="dz-prog"><span id="dzBar"></span></div>
+  </div>
+</section>
+
+<section class="ds" id="dashShow">
+  <div class="ds-sticky">
+    <div class="ds-inner">
+      <div class="ds-head">
+        <span class="eyebrow">SCENARIOS</span>
+        <h2>6가지 시나리오</h2>
+        <p>목적에 맞는 시나리오를 골라 상황판을 전환합니다. 스크롤해 보세요.</p>
+      </div>
+      <div class="ds-stage">
+        <div class="ds-frame" id="dsFrame"><div class="ds-shot on" data-i="0"><picture><source srcset="../assets/img/dash/integrated.webp" type="image/webp"><img src="../assets/img/dash/integrated.jpg" alt="통합운영 상황판 화면" loading="lazy"></picture></div><div class="ds-shot" data-i="1"><picture><source srcset="../assets/img/dash/traffic.webp" type="image/webp"><img src="../assets/img/dash/traffic.jpg" alt="소통관리 상황판 화면" loading="lazy"></picture></div><div class="ds-shot" data-i="2"><picture><source srcset="../assets/img/dash/safety.webp" type="image/webp"><img src="../assets/img/dash/safety.jpg" alt="안전관리 상황판 화면" loading="lazy"></picture></div><div class="ds-shot" data-i="3"><picture><source srcset="../assets/img/dash/signal.webp" type="image/webp"><img src="../assets/img/dash/signal.jpg" alt="신호운영 상황판 화면" loading="lazy"></picture></div><div class="ds-shot" data-i="4"><picture><source srcset="../assets/img/dash/bus.webp" type="image/webp"><img src="../assets/img/dash/bus.jpg" alt="버스정보 상황판 화면" loading="lazy"></picture></div><span class="ds-scan"></span></div>
+        <div class="ds-caps"><div class="ds-cap on" data-i="0"><span class="ds-no">01</span><span class="ds-en">INTEGRATED</span><h3>통합운영</h3><p>교통·안전·신호·버스정보 4개 시나리오의 주요 지표를 한 화면으로 모읍니다.</p><ul><li>교통정보 수집시스템 (스마트교차로 · CCTV · VDS)</li><li>교통정보 제공시스템 (VMS · 홈페이지 · 공공데이터 개방)</li><li>스마트 안전시스템 (스마트횡단보도 · 스쿨존)</li><li>디지털도로 · 신호 · 버스정보 시스템 운영현황</li></ul></div><div class="ds-cap" data-i="1"><span class="ds-no">02</span><span class="ds-en">TRAFFIC FLOW</span><h3>소통관리</h3><p>실시간 교통량과 속도를 분석해 정체를 미리 읽어냅니다.</p><ul><li>실시간 교통량 · 속도 통계 분석</li><li>유출입 교통량의 시간대별 추이와 총계</li><li>상습정체구간 첨두/비첨두 · 평일/주말 현황</li><li>실시간 지체·정체 구간과 주요교차로 CCTV</li></ul></div><div class="ds-cap" data-i="2"><span class="ds-no">03</span><span class="ds-en">SAFETY</span><h3>안전관리</h3><p>도로 위 위험을 히트맵으로 모아 사고가 나기 전에 보이게 합니다.</p><ul><li>돌발상황 히트맵 · 실시간 돌발현황(사고 · 공사)</li><li>횡단보도 위험관리 (무단횡단 · 역주행 · 횡단대기)</li><li>스마트 횡단보도 검지 (통행인구 · 차량접근 · 불법주차)</li><li>디지털도로 위험물 수집 (포트홀 · 균열 · 노면표시 파손)</li></ul></div><div class="ds-cap" data-i="3"><span class="ds-no">04</span><span class="ds-en">SIGNAL</span><h3>신호운영</h3><p>교차로 서비스 수준을 등급으로 보고, 개선 효과를 숫자로 확인합니다.</p><ul><li>주요교차로 실시간 신호운영 현황</li><li>신호개선 효과지표 (대기행렬 · 통행속도)</li><li>신호교차로 서비스 수준(LOS) 등급 표출</li><li>서비스 수준 상위 4개 교차로 연동 표출</li></ul></div><div class="ds-cap" data-i="4"><span class="ds-no">05</span><span class="ds-en">BUS</span><h3>버스정보</h3><p>시내·마을·광역 버스의 실시간 위치와 안내기 운영상태를 함께 봅니다.</p><ul><li>실시간 버스 이동정보 (시내 · 마을)</li><li>실시간 버스 이동정보 (광역)</li><li>버스정보안내기(BIT) 운영현황</li><li>국토교통부 기준지표 충족 현황</li></ul></div></div>
+      </div>
+      <div class="ds-rail"><button class="ds-dot on" type="button" data-go="0"><i></i><span>통합운영</span></button><button class="ds-dot" type="button" data-go="1"><i></i><span>소통관리</span></button><button class="ds-dot" type="button" data-go="2"><i></i><span>안전관리</span></button><button class="ds-dot" type="button" data-go="3"><i></i><span>신호운영</span></button><button class="ds-dot" type="button" data-go="4"><i></i><span>버스정보</span></button></div>
+      <div class="ds-prog"><span id="dsBar"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark-sec"><div class="area">
+  <div class="section-head is-dark" data-reveal><span class="eyebrow">COMMON LAYOUT</span><h2>모든 화면의 공통 구성</h2></div>
+  <div class="dlay-grid"><article class="dlay" data-reveal style="--td:0ms"><span class="n">01</span><h3>GIS 기반 지도</h3><p>지자체 전역의 교통시설물을 지도 위에 표현하고, 버튼을 누르면 해당 지역 중심으로 이동합니다.</p></article><article class="dlay" data-reveal style="--td:120ms"><span class="n">02</span><h3>미니 대시보드</h3><p>화면 오른쪽에 요약 지표를 상시 표출합니다. 시나리오에 따라 강조 항목이 바뀝니다.</p></article><article class="dlay" data-reveal style="--td:240ms"><span class="n">03</span><h3>시나리오 이동</h3><p>한 번의 클릭으로 통합운영 · 소통 · 안전 · 신호 · 버스정보 화면을 오갑니다.</p></article></div>
+</div></section>
+
+<section class="section dark-sec dark-sec2"><div class="area">
+  <div class="dfault">
+    <div class="dfault-txt">
+      <span class="eyebrow" data-reveal>ONE MORE</span>
+      <h2 data-reveal data-d="80">장애관리 시나리오</h2>
+      <p data-reveal data-d="160">운영·유지보수 관점에서 시스템별 장애를 한눈에 관제합니다. 스마트교차로 · CCTV · VDS · VMS 등 장비별 장애현황을 GIS 위에 표시해 위치까지 바로 파악할 수 있습니다.</p>
+      <ul class="dfault-list"><li class="dfi" data-reveal style="--td:0ms">시스템별 장애현황 집계</li><li class="dfi" data-reveal style="--td:90ms">GIS 기반 장애 위치 파악</li><li class="dfi" data-reveal style="--td:180ms">장비 유형별 필터</li><li class="dfi" data-reveal style="--td:270ms">실시간 상태 갱신</li></ul>
+      <a class="btn btn-primary" href="../contact.html" data-reveal data-d="300"
+         style="margin-top:30px">상황판 도입 문의<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="dfault-viz" data-reveal data-d="140" data-speed="0.08">
+      <span class="dfv-ring r1"></span><span class="dfv-ring r2"></span><span class="dfv-ring r3"></span>
+      <span class="dfv-pin p1"></span><span class="dfv-pin p2"></span><span class="dfv-pin p3"></span>
+      <span class="dfv-pin p4"></span><span class="dfv-pin p5"></span>
+      <span class="dfv-core"></span>
+    </div>
+  </div>
+  <p class="dsol-note" data-reveal style="margin-top:clamp(46px,6vw,72px)">화면 이미지는 화성특례시 ITS 상황판 구축 사례입니다.</p>
+</div></section>
+<section class="section cta">
+  <div class="area" data-reveal>
+    <h2>교통 시스템 도입을 검토 중이신가요?</h2>
+    <p>사업 요구사항을 알려주시면 상림기술이 최적의 솔루션을 제안드립니다.</p>
+    <a href="../contact.html" class="btn btn-primary">문의하기
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
+</main>
+
+<footer class="footer" id="footer">
+  <div class="area-wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img class="footer-logo" src="../assets/img/logo-v-white.png" alt="(주)상림기술">
+        <p>축적된 기술력으로 더 안전한 길과<br>더 나은 교통시스템을 만듭니다.</p>
+        <p style="margin-top:16px;font-size:.86rem">
+          T. <a href="tel:0220831333">02-2083-1333</a><br>
+          E. <a href="mailto:ceo@sanglim.co.kr">ceo@sanglim.co.kr</a></p>
+      </div>
+      <nav class="footer-map"><div><h4>회사소개</h4><ul><li><a href="../company/greeting.html">인사말</a></li><li><a href="../company/history.html">연혁</a></li><li><a href="../company/organization.html">조직도</a></li><li><a href="../company/record.html">구축사례</a></li><li><a href="../company/certification.html">인증현황</a></li><li><a href="../company/partners.html">파트너사</a></li><li><a href="../company/location.html">오시는 길</a></li></ul></div><div><h4>사업분야</h4><ul><li><a href="../business/its.html">지능형 교통체계</a></li><li><a href="../business/bis.html">버스정보 안내시스템</a></li><li><a href="../business/evs.html">긴급차량 우선신호 시스템</a></li><li><a href="../business/ssz.html">스마트 스쿨존 시스템</a></li></ul></div><div><h4>주요제품</h4><ul><li><a href="../product/vms.html">도로교통 전광판(VMS)</a></li><li><a href="../product/bit.html">버스정보안내 전광판(BIT)</a></li><li><a href="../product/ecs.html">전기차 충전소 전광판</a></li><li><a href="../product/gnss.html">초정밀 모듈(GNSS)</a></li><li><a href="../product/ptz.html">PTZ 카메라</a></li><li><a href="../product/dashboard.html">상황판(대시보드)</a></li></ul></div><div><h4>오시는 길</h4><ul><li>본사 · SK테크노파크 D동 1507호</li><li>공장 · SK테크노파크 D동 1508호</li><li>경기도 광명시 하안로 60</li></ul></div></nav>
+    </div>
+    <div class="footer-bottom">
+      <span>(주)상림기술 · 대표이사 임상일 · 사업자등록번호 197-87-02040<br>경기도 광명시 하안로 60, 광명 SK테크노파크 D동 1507호</span>
+      <span>Copyright &copy; SangLim Technologies. All rights Reserved.</span>
+    </div>
+  </div>
+</footer>
+<button class="to-top" id="totop" aria-label="맨 위로">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
+
+<!-- 상담 위젯 -->
+<div class="cw" id="cw" data-base="../" data-tel="02-2083-1333" data-mail="ceo@sanglim.co.kr" data-lang="ko">
+  <button class="cw-fab" id="cwFab" type="button" aria-expanded="false" aria-controls="cwPanel"
+          aria-label="온라인 상담 열기">
+    <svg class="cw-i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.5 9.5 0 0 1-2.9-.4L3 21l1.6-4.6A8.3 8.3 0 0 1 3.6 11.5 8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4z"/>
+    </svg>
+    <svg class="cw-i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"
+         stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    <span class="cw-ping" aria-hidden="true"></span>
+  </button>
+
+  <div class="cw-tip" id="cwTip" role="note">무엇을 도와드릴까요?<i></i></div>
+
+  <section class="cw-panel" id="cwPanel" role="dialog" aria-modal="false" aria-label="상림기술 상담" hidden>
+    <header class="cw-head">
+      <span class="cw-ava" aria-hidden="true">
+        <img src="../assets/img/logo-v-white.png" alt="">
+      </span>
+      <div class="cw-who"><b>상림기술 상담</b><span><i></i>보통 1영업일 이내 회신</span></div>
+      <button class="cw-min" id="cwMin" type="button" aria-label="닫기">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><path d="M6 12h12"/></svg>
+      </button>
+    </header>
+
+    <div class="cw-log" id="cwLog" role="log" aria-live="polite"></div>
+
+    <div class="cw-foot">
+      <div class="cw-chips" id="cwChips"></div>
+      <div class="cw-quick">
+        <a class="cw-q" href="tel:0220831333"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>전화</a>
+        <a class="cw-q" href="mailto:ceo@sanglim.co.kr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg>이메일</a>
+        <a class="cw-q" href="../contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg>문의 양식</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script src="../vendor/swiper-bundle.min.js"></script>
+<script src="../vendor/gsap.min.js"></script>
+<script src="../vendor/ScrollTrigger.min.js"></script>
+<script src="../assets/app.js?v=66ff6e09"></script>
+</body>
+</html>

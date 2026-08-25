@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Control Wall Dashboard | SangLim Technologies Co., Ltd.</title>
+<meta name="description" content="An ITS control wall that brings traffic, safety, signal and bus data onto one screen.">
+<meta http-equiv="Cache-Control" content="no-cache">
+<link rel="icon" href="../../assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../../assets/favicon.png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<meta name="theme-color" content="#1F2A5A">
+<script>
+/* 배포 감시 — 서버가 캐시 헤더를 안 보내는 환경(python -m http.server 등)에서
+   브라우저가 옛 HTML 을 계속 쓰는 일을 막습니다. 빌드 번호가 다르면 한 번만 새로고침. */
+window.__BUILD__="66ff6e09";(function(){try{
+ fetch("../../version.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json();})
+  .then(function(j){
+    if(!j||!j.build||j.build===window.__BUILD__) return;
+    /* 빌드 번호별로 한 번씩만 새로고침 — 예전엔 세션당 한 번뿐이라
+       두 번째 수정부터는 옛 화면이 그대로 남았습니다 */
+    var k="sl-rl:"+j.build;
+    if(sessionStorage.getItem(k)) return;
+    sessionStorage.setItem(k,"1");
+    location.reload();
+  }).catch(function(){});
+ }catch(e){}})();
+</script>
+<link rel="alternate" hreflang="ko" href="../../product/dashboard.html">
+<link rel="alternate" hreflang="en" href="../../en/product/dashboard.html">
+<link rel="stylesheet" href="../../vendor/swiper-bundle.min.css">
+<link rel="stylesheet" href="../../assets/style.css?v=66ff6e09">
+<noscript><style>[data-reveal]{opacity:1!important;translate:none!important}</style></noscript>
+</head>
+<body class="has-sub">
+
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="../../en/index.html" class="logo">
+      <img class="lg-white" src="../../assets/img/logo-h-white.png" alt="SangLim Technologies Co., Ltd.">
+      <img class="lg-color" src="../../assets/img/logo-h.png" alt="SangLim Technologies Co., Ltd.">
+    </a>
+    <nav><ul class="gnb"><li><a href="../../en/company/greeting.html">Company</a><div class="gnb-2dep"><ul><li><a href="../../en/company/greeting.html">CEO Message</a></li><li><a href="../../en/company/history.html">History</a></li><li><a href="../../en/company/organization.html">Organization</a></li><li><a href="../../en/company/record.html">Track Record</a></li><li><a href="../../en/company/certification.html">Certifications</a></li><li><a href="../../en/company/partners.html">Partners</a></li><li><a href="../../en/company/location.html">Directions</a></li></ul></div></li><li><a href="../../en/business/its.html">Business</a><div class="gnb-2dep"><ul><li><a href="../../en/business/its.html">Intelligent Transport System (ITS)</a></li><li><a href="../../en/business/bis.html">Bus Information System (BIS)</a></li><li><a href="../../en/business/evs.html">Emergency Vehicle Priority Signal</a></li><li><a href="../../en/business/ssz.html">Smart School Zone</a></li></ul></div></li><li class="cur"><a href="../../en/product/vms.html">Products</a><div class="gnb-2dep"><ul><li><a href="../../en/product/vms.html">Variable Message Sign (VMS)</a></li><li><a href="../../en/product/bit.html">Bus Information Terminal (BIT)</a></li><li><a href="../../en/product/ecs.html">EV Charging Station Display</a></li><li><a href="../../en/product/gnss.html">High-Precision GNSS Module</a></li><li><a href="../../en/product/ptz.html">PTZ Camera</a></li><li><a href="../../en/product/dashboard.html">Control Wall Dashboard</a></li></ul></div></li><li><a href="../../en/contact.html">Contact</a></li></ul></nav>
+    <div class="header-util">
+      <div class="lang"><a href="../../product/dashboard.html">KR</a><span>/</span><a href="../../en/product/dashboard.html" class="on">EN</a></div>
+      <button class="navtog" id="navtog" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="drawer-dim" id="dim"></div>
+<aside class="drawer" id="drawer" aria-label="Mobile menu"></aside>
+
+<main id="top">
+<section class="subvis">
+  <span class="orb o1"></span><span class="orb o2"></span>
+  <div class="subvis-inner">
+    <h1>Control Wall Dashboard</h1>
+    <div class="crumb"><a href="../../en/index.html">Home</a><i></i><a href="../../en/product/vms.html">Products</a><i></i><span class="cur">Control Wall Dashboard</span></div>
+  </div>
+</section>
+<nav class="subnav"><ul><li><a href="../../en/product/vms.html">Variable Message Sign (VMS)</a></li><li><a href="../../en/product/bit.html">Bus Information Terminal (BIT)</a></li><li><a href="../../en/product/ecs.html">EV Charging Station Display</a></li><li><a href="../../en/product/gnss.html">High-Precision GNSS Module</a></li><li><a href="../../en/product/ptz.html">PTZ Camera</a></li><li><a href="../../en/product/dashboard.html" class="on">Control Wall Dashboard</a></li></ul></nav>
+<section class="dz" id="dashZoom">
+  <div class="dz-sticky">
+    <!-- 1) 거대한 키워드 -->
+    <div class="dz-kw" id="dzKw">
+      <span class="dz-kick">ITS CONTROL WALL</span>
+      <h2><span class="l1">A whole city,</span><span class="l2">on <em>one screen</em></span></h2>
+      <p>Traffic, safety, signal and bus data that used to live in separate systems, gathered into a single control wall. Operators no longer switch between screens to find out what the city is doing.</p>
+    </div>
+    <!-- 2) 커지는 상황판 -->
+    <div class="dz-stage">
+      <div class="dz-wall" id="dzWall">
+        <picture><source srcset="../../assets/img/dash/integrated-hi.webp" type="image/webp">
+        <img src="../../assets/img/dash/integrated-hi.jpg" alt="Control Wall Dashboard" id="dzImg"></picture>
+        <span class="dz-focus" id="dzFocus"></span>
+      </div>
+    </div>
+    <!-- 3) 패널별 설명 -->
+    <div class="dz-caps" id="dzCaps">
+      <div class="dz-cap dz-full" data-i="0"><h3>One wall, five screens</h3></div>
+      <div class="dz-cap" data-i="1"><span class="dz-n">01</span><h3>System status</h3><p>Every device in service counted by type &mdash; smart intersections, CCTV, VDS, message signs and buses.</p></div><div class="dz-cap" data-i="2"><span class="dz-n">02</span><h3>GIS base map</h3><p>All traffic infrastructure drawn on the city map, with scenario buttons alongside it.</p></div><div class="dz-cap" data-i="3"><span class="dz-n">03</span><h3>Mini dashboard</h3><p>Live signal opening, partner data links and website status, always on screen.</p></div><div class="dz-cap" data-i="4"><span class="dz-n">04</span><h3>Information delivery</h3><p>What each message sign is showing right now, next to the flow state of every road.</p></div>
+    </div>
+    <div class="dz-prog"><span id="dzBar"></span></div>
+  </div>
+</section>
+
+<section class="ds" id="dashShow">
+  <div class="ds-sticky">
+    <div class="ds-inner">
+      <div class="ds-head">
+        <span class="eyebrow">SCENARIOS</span>
+        <h2>Six scenarios</h2>
+        <p>Switch the wall to the scenario that fits the task. Scroll to explore.</p>
+      </div>
+      <div class="ds-stage">
+        <div class="ds-frame" id="dsFrame"><div class="ds-shot on" data-i="0"><picture><source srcset="../../assets/img/dash/integrated.webp" type="image/webp"><img src="../../assets/img/dash/integrated.jpg" alt="Integrated view 상황판 화면" loading="lazy"></picture></div><div class="ds-shot" data-i="1"><picture><source srcset="../../assets/img/dash/traffic.webp" type="image/webp"><img src="../../assets/img/dash/traffic.jpg" alt="Traffic flow 상황판 화면" loading="lazy"></picture></div><div class="ds-shot" data-i="2"><picture><source srcset="../../assets/img/dash/safety.webp" type="image/webp"><img src="../../assets/img/dash/safety.jpg" alt="Safety 상황판 화면" loading="lazy"></picture></div><div class="ds-shot" data-i="3"><picture><source srcset="../../assets/img/dash/signal.webp" type="image/webp"><img src="../../assets/img/dash/signal.jpg" alt="Signal operation 상황판 화면" loading="lazy"></picture></div><div class="ds-shot" data-i="4"><picture><source srcset="../../assets/img/dash/bus.webp" type="image/webp"><img src="../../assets/img/dash/bus.jpg" alt="Bus information 상황판 화면" loading="lazy"></picture></div><span class="ds-scan"></span></div>
+        <div class="ds-caps"><div class="ds-cap on" data-i="0"><span class="ds-no">01</span><span class="ds-en">INTEGRATED</span><h3>Integrated view</h3><p>Key indicators from all four scenarios &mdash; traffic, safety, signals and buses &mdash; on one screen.</p><ul><li>Data collection: smart intersections, CCTV, VDS</li><li>Data delivery: VMS, public website, open data</li><li>Smart safety: smart crosswalks and school zones</li><li>Digital road, signal and bus system status</li></ul></div><div class="ds-cap" data-i="1"><span class="ds-no">02</span><span class="ds-en">TRAFFIC FLOW</span><h3>Traffic flow</h3><p>Live volume and speed analysis that lets operators see congestion before it forms.</p><ul><li>Real-time volume and speed statistics</li><li>Inbound / outbound volume by time of day</li><li>Recurring congestion by peak / off-peak and weekday / weekend</li><li>Live delay sections with major-intersection CCTV</li></ul></div><div class="ds-cap" data-i="2"><span class="ds-no">03</span><span class="ds-en">SAFETY</span><h3>Safety</h3><p>Road hazards gathered into a heat map, so risk is visible before an accident happens.</p><ul><li>Incident heat map and live incident status (crashes, works)</li><li>Crosswalk risk: jaywalking, wrong-way, waiting pedestrians</li><li>Smart crosswalk detection: footfall, approaching vehicles, illegal parking</li><li>Digital-road hazards: potholes, cracks, damaged markings</li></ul></div><div class="ds-cap" data-i="3"><span class="ds-no">04</span><span class="ds-en">SIGNAL</span><h3>Signal operation</h3><p>Intersection level of service at a glance, with the effect of every change measured.</p><ul><li>Live signal operation at major intersections</li><li>Improvement metrics: queue length and travel speed</li><li>Level of service (LOS) grading per intersection</li><li>Top four intersections linked to the LOS ranking</li></ul></div><div class="ds-cap" data-i="4"><span class="ds-no">05</span><span class="ds-en">BUS</span><h3>Bus information</h3><p>Live positions for city, community and intercity buses alongside terminal health.</p><ul><li>Live bus positions (city and community routes)</li><li>Live bus positions (intercity routes)</li><li>Bus Information Terminal (BIT) operating status</li><li>Compliance with Ministry of Land standard indicators</li></ul></div></div>
+      </div>
+      <div class="ds-rail"><button class="ds-dot on" type="button" data-go="0"><i></i><span>Integrated view</span></button><button class="ds-dot" type="button" data-go="1"><i></i><span>Traffic flow</span></button><button class="ds-dot" type="button" data-go="2"><i></i><span>Safety</span></button><button class="ds-dot" type="button" data-go="3"><i></i><span>Signal operation</span></button><button class="ds-dot" type="button" data-go="4"><i></i><span>Bus information</span></button></div>
+      <div class="ds-prog"><span id="dsBar"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark-sec"><div class="area">
+  <div class="section-head is-dark" data-reveal><span class="eyebrow">COMMON LAYOUT</span><h2>Shared across every screen</h2></div>
+  <div class="dlay-grid"><article class="dlay" data-reveal style="--td:0ms"><span class="n">01</span><h3>GIS base map</h3><p>Every piece of traffic infrastructure in the city, drawn on the map. One click centres the view on a district.</p></article><article class="dlay" data-reveal style="--td:120ms"><span class="n">02</span><h3>Mini dashboard</h3><p>A summary panel always on the right. The highlighted figures change with the scenario.</p></article><article class="dlay" data-reveal style="--td:240ms"><span class="n">03</span><h3>Scenario switch</h3><p>Move between integrated, traffic, safety, signal and bus views in a single click.</p></article></div>
+</div></section>
+
+<section class="section dark-sec dark-sec2"><div class="area">
+  <div class="dfault">
+    <div class="dfault-txt">
+      <span class="eyebrow" data-reveal>ONE MORE</span>
+      <h2 data-reveal data-d="80">Fault management scenario</h2>
+      <p data-reveal data-d="160">A sixth view built for operations and maintenance. Faults across smart intersections, CCTV, VDS and VMS are aggregated by system and plotted on the GIS map, so the location is immediately clear.</p>
+      <ul class="dfault-list"><li class="dfi" data-reveal style="--td:0ms">Fault counts by system</li><li class="dfi" data-reveal style="--td:90ms">GIS-based fault location</li><li class="dfi" data-reveal style="--td:180ms">Filter by equipment type</li><li class="dfi" data-reveal style="--td:270ms">Live status refresh</li></ul>
+      <a class="btn btn-primary" href="../../en/contact.html" data-reveal data-d="300"
+         style="margin-top:30px">Talk to us about a control wall<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="dfault-viz" data-reveal data-d="140" data-speed="0.08">
+      <span class="dfv-ring r1"></span><span class="dfv-ring r2"></span><span class="dfv-ring r3"></span>
+      <span class="dfv-pin p1"></span><span class="dfv-pin p2"></span><span class="dfv-pin p3"></span>
+      <span class="dfv-pin p4"></span><span class="dfv-pin p5"></span>
+      <span class="dfv-core"></span>
+    </div>
+  </div>
+  <p class="dsol-note" data-reveal style="margin-top:clamp(46px,6vw,72px)">Screens shown are from the Hwaseong City ITS control wall project.</p>
+</div></section>
+<section class="section cta">
+  <div class="area" data-reveal>
+    <h2>Planning a traffic system project?</h2>
+    <p>Tell us your requirements and SangLim Technologies will propose the right solution.</p>
+    <a href="../../en/contact.html" class="btn btn-primary">Contact us
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
+</main>
+
+<footer class="footer" id="footer">
+  <div class="area-wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img class="footer-logo" src="../../assets/img/logo-v-white.png" alt="SangLim Technologies Co., Ltd.">
+        <p>Building safer roads and better traffic<br>systems with proven engineering.</p>
+        <p style="margin-top:16px;font-size:.86rem">
+          T. <a href="tel:0220831333">02-2083-1333</a><br>
+          E. <a href="mailto:ceo@sanglim.co.kr">ceo@sanglim.co.kr</a></p>
+      </div>
+      <nav class="footer-map"><div><h4>Company</h4><ul><li><a href="../../en/company/greeting.html">CEO Message</a></li><li><a href="../../en/company/history.html">History</a></li><li><a href="../../en/company/organization.html">Organization</a></li><li><a href="../../en/company/record.html">Track Record</a></li><li><a href="../../en/company/certification.html">Certifications</a></li><li><a href="../../en/company/partners.html">Partners</a></li><li><a href="../../en/company/location.html">Directions</a></li></ul></div><div><h4>Business</h4><ul><li><a href="../../en/business/its.html">Intelligent Transport System (ITS)</a></li><li><a href="../../en/business/bis.html">Bus Information System (BIS)</a></li><li><a href="../../en/business/evs.html">Emergency Vehicle Priority Signal</a></li><li><a href="../../en/business/ssz.html">Smart School Zone</a></li></ul></div><div><h4>Products</h4><ul><li><a href="../../en/product/vms.html">Variable Message Sign (VMS)</a></li><li><a href="../../en/product/bit.html">Bus Information Terminal (BIT)</a></li><li><a href="../../en/product/ecs.html">EV Charging Station Display</a></li><li><a href="../../en/product/gnss.html">High-Precision GNSS Module</a></li><li><a href="../../en/product/ptz.html">PTZ Camera</a></li><li><a href="../../en/product/dashboard.html">Control Wall Dashboard</a></li></ul></div><div><h4>Directions</h4><ul><li>Head Office · SK Techno Park D-1507</li><li>Factory · SK Techno Park D-1508</li><li>60 Haan-ro, Gwangmyeong-si, Gyeonggi-do, Korea</li></ul></div></nav>
+    </div>
+    <div class="footer-bottom">
+      <span>SangLim Technologies Co., Ltd. · CEO Lim Sang-il · Business Reg. No. 197-87-02040<br>SK Techno Park D-1507, 60 Haan-ro, Gwangmyeong-si, Gyeonggi-do, Republic of Korea</span>
+      <span>Copyright &copy; SangLim Technologies. All rights Reserved.</span>
+    </div>
+  </div>
+</footer>
+<button class="to-top" id="totop" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
+
+<!-- 상담 위젯 -->
+<div class="cw" id="cw" data-base="../../en/" data-tel="02-2083-1333" data-mail="ceo@sanglim.co.kr" data-lang="en">
+  <button class="cw-fab" id="cwFab" type="button" aria-expanded="false" aria-controls="cwPanel"
+          aria-label="Open live enquiry">
+    <svg class="cw-i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.5 9.5 0 0 1-2.9-.4L3 21l1.6-4.6A8.3 8.3 0 0 1 3.6 11.5 8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4z"/>
+    </svg>
+    <svg class="cw-i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"
+         stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    <span class="cw-ping" aria-hidden="true"></span>
+  </button>
+
+  <div class="cw-tip" id="cwTip" role="note">How can we help?<i></i></div>
+
+  <section class="cw-panel" id="cwPanel" role="dialog" aria-modal="false" aria-label="SangLim Support" hidden>
+    <header class="cw-head">
+      <span class="cw-ava" aria-hidden="true">
+        <img src="../../assets/img/logo-v-white.png" alt="">
+      </span>
+      <div class="cw-who"><b>SangLim Support</b><span><i></i>Usually replies within 1 business day</span></div>
+      <button class="cw-min" id="cwMin" type="button" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><path d="M6 12h12"/></svg>
+      </button>
+    </header>
+
+    <div class="cw-log" id="cwLog" role="log" aria-live="polite"></div>
+
+    <div class="cw-foot">
+      <div class="cw-chips" id="cwChips"></div>
+      <div class="cw-quick">
+        <a class="cw-q" href="tel:0220831333"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Call</a>
+        <a class="cw-q" href="mailto:ceo@sanglim.co.kr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg>Email</a>
+        <a class="cw-q" href="../../en/contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg>Form</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script src="../../vendor/swiper-bundle.min.js"></script>
+<script src="../../vendor/gsap.min.js"></script>
+<script src="../../vendor/ScrollTrigger.min.js"></script>
+<script src="../../assets/app.js?v=66ff6e09"></script>
+</body>
+</html>
