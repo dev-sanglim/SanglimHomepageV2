@@ -1528,6 +1528,11 @@ body:has(.cw.on) .to-top{opacity:0;visibility:hidden;translate:0 8px}
   box-shadow:0 30px 70px rgba(0,0,0,.45);
   transition:transform .7s var(--ease-out),border-color .5s ease}
 .dsol-fig:hover{transform:translateY(-6px);border-color:rgba(91,120,224,.42)}
+/* 흰 배경이 필요한 사진(가장자리가 흰색으로 날아가는 사진)용 카드 */
+.dsol-fig.is-white{background:#fff;border-color:rgba(255,255,255,.7);
+  box-shadow:0 30px 70px rgba(0,0,0,.4)}
+.dsol-fig.is-white:hover{border-color:#fff}
+.dsol-fig.is-white img{filter:drop-shadow(0 16px 30px rgba(20,28,62,.16))}
 .dsol-glow{position:absolute;left:50%;top:44%;translate:-50% -50%;width:78%;aspect-ratio:1;
   border-radius:50%;z-index:0;pointer-events:none;
   background:radial-gradient(circle,rgba(91,120,224,.28),transparent 66%);filter:blur(10px)}

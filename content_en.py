@@ -10,9 +10,19 @@ build.
 
 # ------------------------------------------------------------------ history
 HISTORY_EN = [
- ("2026", "Cloud transition", [
-   ("b", "Pyeongtaek ITS integrated maintenance service", "in progress", 1),
-   ("b", "Bus Information System expansion · Andong", "in progress", 1),
+ ("2026", "Nationwide operations", [
+   ("b", "Busan Metropolitan City Bus Information Management System (BIMS) construction", "", 1),
+   ("b", "Seoul bus information terminal manufacture, supply and replacement", "", 1),
+   ("b", "KTX Gwangmyeong Station bus information system upgrade", "", 1),
+   ("b", "Seosan parking information sharing service", "", 0),
+   ("b", "Sangju emergency-vehicle priority signal integration upgrade", "", 0),
+   ("b", "Hwaseong Intelligent Transport System integrated maintenance", "", 0),
+   ("b", "Pyeongtaek Intelligent Transport System integrated maintenance", "in progress", 0),
+   ("b", "Namyangju traffic information system integrated maintenance", "", 0),
+   ("b", "Gwangmyeong ITS &amp; BIS integrated maintenance", "", 0),
+   ("b", "Gwangmyeong smart CCTV integrated maintenance", "", 0),
+   ("b", "Andong Intelligent Transport System maintenance", "", 0),
+   ("b", "Bus Information System expansion &middot; Andong", "in progress", 0),
  ]),
  ("2025", "Entry into metropolitan cities", [
    ("b", "Busan Metropolitan City BIMS expansion &amp; improvement", "", 1),
@@ -68,14 +78,21 @@ REC_EN = [
    ("Wonjeoksan Tunnel toll display", "Incheon"),
    ("Andong ITS traffic information sign", "Andong-si, Gyeongsangbuk-do"),
    ("Seongnam ITS traffic information sign", "Seongnam-si, Gyeonggi-do"),
-   ("Chuncheon ITS traffic information sign", "Chuncheon-si, Gangwon-do")]),
+   ("Chuncheon ITS traffic information sign", "Chuncheon-si, Gangwon-do"),
+   ("Pohang variable message signs", "Pohang-si, Gyeongsangbuk-do"),
+   ("Daegu variable message signs", "Daegu")]),
  ("Bus Information Terminals (BIT)", [
    ("Hwaseong bus information terminals", "Hwaseong-si, Gyeonggi-do"),
    ("Suwon bus information terminals", "Suwon-si, Gyeonggi-do"),
    ("Yongin bus information terminals", "Yongin-si, Gyeonggi-do"),
    ("Anyang bus information terminals", "Anyang-si, Gyeonggi-do"),
    ("Gwangmyeong bus information terminals", "Gwangmyeong-si, Gyeonggi-do"),
-   ("Gwangmyeong smart bus shelter", "Gwangmyeong-si, Gyeonggi-do")]),
+   ("Seongnam bus information terminals", "Seongnam-si, Gyeonggi-do"),
+   ("Andong bus information terminals", "Andong-si, Gyeongsangbuk-do")]),
+ ("Smart Bus Shelters", [
+   ("Busan smart shelters (bus information terminals included)", "Busan"),
+   ("Gwangmyeong smart shelters (bus information terminals included)", "Gwangmyeong-si, Gyeonggi-do"),
+   ("Seongnam smart shelter maintenance", "Seongnam-si, Gyeonggi-do")]),
  ("Emergency Vehicle Priority Signal", [
    ("Seoul emergency-vehicle priority signal system", "Seoul"),
    ("Yeongcheon emergency dispatch display", "Yeongcheon-si, Gyeongsangbuk-do"),
@@ -92,7 +109,14 @@ REC_EN = [
    ("Easy Charger EV charging station displays", "Gimcheon Service Area, Gyeongbu Expressway"),
    ("Andong Sinsijang no-straight-ahead advisory system", "Andong-si, Gyeongsangbuk-do")]),
 ]
-REC_IMG_EN = ["vms", "bit", "evs2", "ssz2", "ecs"]
+REC_IMG_EN = {
+  "Variable Message Signs (VMS)": "vms",
+  "Bus Information Terminals (BIT)": "bit",
+  "Smart Bus Shelters": "bitx",
+  "Emergency Vehicle Priority Signal": "evs2",
+  "Pedestrian Safety \u00b7 Smart School Zone": "ssz2",
+  "EV Charging Displays \u00b7 Other": "ecs",
+}
 
 # ------------------------------------------------------------- certificates
 CERTS_EN = [
@@ -142,8 +166,7 @@ PUB_EN = ["Hwaseong-si","Gwangmyeong-si","Yongin-si","Seoul Metropolitan Gov.","
           "Andong-si","Paju-si","Suwon-si","Gwangyang-si","Gimpo-si","Seongnam-si",
           "Daejeon Metropolitan City","Sejong City","Chuncheon-si","Gyeongju-si",
           "Chungcheongnam-do","Cheongju-si","Goyang-si","Yeongcheon-si","Jecheon-si","Jeju Province"]
-PRI_EN = ["GS Caltex","EASY CHARGER","SONGAM","KT","SK telecom","KI&amp;T",
-          "Daebo Information &amp; Communication","TRACOM","Daehung Information"]
+PRI_EN = [(1, "GS Caltex"), (2, "EASY CHARGER"), (4, "KT"), (5, "SK telecom")]
 
 # ------------------------------------------------- direct production scopes
 DIRECT_EN = [
@@ -223,8 +246,8 @@ def pages():
     on a foundation of trust, engineering capability and a willingness to take on hard problems,
     contributing to the growth of Korea&rsquo;s transport industry.</p>
     <p>Even against shifting global conditions and the fragmentation of trade, we have reached
-    <strong>cumulative revenue of KRW 21 billion</strong> and a
-    <strong>corporate credit rating of BBB+</strong> &mdash; an achievement we value all the more
+    <strong>cumulative revenue of KRW 55 billion</strong> and a
+    <strong>corporate credit rating of BBB0</strong> &mdash; an achievement we value all the more
     as a young company, because it reflects the confidence our clients place in us.</p>
     <p>We continue to work on clearing higher market barriers and on identifying and mitigating risk
     early. Today we are extending beyond the domestic market into overseas transport projects,
@@ -240,8 +263,8 @@ def pages():
 <div class="section-head" data-reveal><span class="eyebrow" style="color:var(--c-accent-bright)">AT A GLANCE</span>
 <h2>SangLim in numbers</h2></div>
 <div class="stat-grid">
-  <div class="stat" data-reveal><b><span class="num" data-count="21">0</span><span class="u">bn KRW</span></b><span>Cumulative revenue</span><i></i></div>
-  <div class="stat" data-reveal data-d="100"><b><span class="num">BBB+</span></b><span>Corporate credit rating</span><i></i></div>
+  <div class="stat" data-reveal><b><span class="num" data-count="55">0</span><span class="u">bn KRW</span></b><span>Cumulative revenue</span><i></i></div>
+  <div class="stat" data-reveal data-d="100"><b><span class="num">BBB0</span></b><span>Corporate credit rating</span><i></i></div>
   <div class="stat" data-reveal data-d="200"><b><span class="num">2021</span></b><span>Founded</span><i></i></div>
 </div>
 </div></section>
@@ -349,7 +372,8 @@ metropolitan market in 2025.</p></div>
     cats = ""
     for ci, (cname, rows) in enumerate(REC_EN):
         lis = "".join(f'<li><b>{a}</b><span>{b}</span></li>' for a, b in rows)
-        thumb = f'<span class="rec-thumb">{pimg(REC_IMG_EN[ci], p2)}</span>' if ci < len(REC_IMG_EN) else ""
+        _k = REC_IMG_EN.get(cname)
+        thumb = f'<span class="rec-thumb">{pimg(_k, p2)}</span>' if _k else ""
         cats += (f'<div class="rec-cat" data-reveal><h3>{thumb}<span class="rec-t">{cname}</span>'
                  f'<span class="cnt">{len(rows)}</span></h3><ul class="rec-list">{lis}</ul></div>')
     total = sum(len(r) for _, r in REC_EN)
@@ -445,12 +469,12 @@ independent verification that we manufacture and develop in house.</p></div>
         pg += (f'<figure class="pt" data-cat="pub" data-reveal>'
                f'<img src="{p2}assets/img/partner/pub-{i:02d}.png" alt="{nm}" loading="lazy">'
                f'<figcaption class="pt-name">{nm}</figcaption></figure>')
-    for i, nm in enumerate(PRI_EN, 1):
+    for i, nm in PRI_EN:
         pg += (f'<figure class="pt" data-cat="pri" data-reveal>'
                f'<img src="{p2}assets/img/partner/pri-{i:02d}.png" alt="{nm}" loading="lazy">'
                f'<figcaption class="pt-name">{nm}</figcaption></figure>')
     partners = f'''<section class="section"><div class="area-box">
-<div class="section-head" data-reveal><span class="eyebrow">PARTNERS</span><h2>Partners</h2>
+<div class="section-head" data-reveal><span class="eyebrow">CLIENTS</span><h2>Clients</h2>
 <p class="lead">Public bodies and private companies we have worked with.</p></div>
 <div class="pt-tabs" data-reveal>
   <button class="on" data-cat="all">All {len(PUB_EN)+len(PRI_EN)}</button>
@@ -462,7 +486,7 @@ independent verification that we manufacture and develop in house.</p></div>
 <p>We build traffic infrastructure together with local governments, public agencies and private
 companies nationwide. Hover a logo to see it in full colour.</p></div>
 </div></section>'''
-    P.append(("company/partners.html", "Partners",
+    P.append(("company/partners.html", "Clients",
               "Public and private partners of SangLim Technologies.", "company", partners))
 
     # ------------------------------------------------------------ directions
@@ -1035,7 +1059,7 @@ continues to earn recognition for its engineering work.</p></div>
 <span class="eyebrow">PARTNERS</span>
 <h2 style="font-size:clamp(1.4rem,2.2vw,2rem)">Working with local governments across Korea</h2></div>
 <div class="pt-strip" data-reveal><div class="pt-track" id="ptTrack">{strip}</div></div>
-<div class="pt-more"><a href="company/partners.html" class="btn btn-primary">See all partners{ARROW}</a></div>
+<div class="pt-more"><a href="company/partners.html" class="btn btn-primary">See all clients{ARROW}</a></div>
 </div></section>
 
 <section class="section band"><div class="area-box">

@@ -22,7 +22,7 @@ NAV_KO = [
         ("조직도",         "company/organization.html"),
         ("구축사례",       "company/record.html"),
         ("인증현황",       "company/certification.html"),
-        ("파트너사",       "company/partners.html"),
+        ("고객사",         "company/partners.html"),
         ("오시는 길",      "company/location.html"),
     ]),
     ("사업분야", "business", [
@@ -51,7 +51,7 @@ NAV_EN = [
         ("Organization",     "company/organization.html"),
         ("Track Record",     "company/record.html"),
         ("Certifications",   "company/certification.html"),
-        ("Partners",         "company/partners.html"),
+        ("Clients",          "company/partners.html"),
         ("Directions",       "company/location.html"),
     ]),
     ("Business", "business", [
@@ -1154,8 +1154,8 @@ greeting = f'''<section class="section"><div class="area-box">
     <p class="q">무한한 책임감과 도전정신으로<br>지속적인 신뢰를 받는 기업이 되겠습니다</p>
     <p>주식회사 상림기술은 지난 2021년 04월 창립 이래 신뢰와 기술력, 도전정신을 바탕으로
     첨단 교통 시스템 구축을 위한 다양한 사업을 영위하는 기업으로서 국가 교통 산업 발전에 기여해 왔습니다.</p>
-    <p>급변하는 국제정세와 경제블록화 등 여러 불확실성 속에서도 <strong>누적매출액 210억</strong>,
-    <strong>기업신용평가등급 BBB+</strong>를 달성하는 쾌거를 이루었습니다.
+    <p>급변하는 국제정세와 경제블록화 등 여러 불확실성 속에서도 <strong>누적매출액 550억</strong>,
+    <strong>기업신용평가등급 BBB0</strong>를 달성하는 쾌거를 이루었습니다.
     이는 창업기업으로서 높은 신뢰도와 경쟁력을 갖추었다는 점에서 매우 값진 성과였습니다.</p>
     <p>한편, 상림기술은 점차 높아지는 시장장벽을 넘어서고 잠재적 리스크를 사전에 식별·완화하기 위해
     다각적인 노력을 기울이고 있습니다. 이제 국내 교통분야뿐만 아니라 해외 교통부문 시장에 도전하는 등
@@ -1171,8 +1171,8 @@ greeting = f'''<section class="section"><div class="area-box">
 <div class="section-head" data-reveal><span class="eyebrow" style="color:var(--c-accent-bright)">AT A GLANCE</span>
 <h2>숫자로 보는 상림기술</h2></div>
 <div class="stat-grid">
-  <div class="stat" data-reveal><b><span class="num" data-count="210">0</span><span class="u">억</span></b><span>누적 매출액</span><i></i></div>
-  <div class="stat" data-reveal data-d="100"><b><span class="num">BBB+</span></b><span>기업신용평가등급</span><i></i></div>
+  <div class="stat" data-reveal><b><span class="num" data-count="550">0</span><span class="u">억</span></b><span>누적 매출액</span><i></i></div>
+  <div class="stat" data-reveal data-d="100"><b><span class="num">BBB0</span></b><span>기업신용평가등급</span><i></i></div>
   <div class="stat" data-reveal data-d="200"><b><span class="num">2021</span><span class="u">년</span></b><span>설립</span><i></i></div>
 </div>
 </div></section>
@@ -1206,11 +1206,17 @@ REC = [
    ("대전지방국토관리청 (VMS)","충청북도 충북권"),("영천시 도로교통정보표지판","경상북도 영천시"),
    ("원적산 터널 전광판","인천광역시 원적산"),("원적산터널 VMS 요금표시기","인천광역시 원적산터널"),
    ("안동시 ITS 도로교통정보표지판","경상북도 안동시"),("성남시 ITS 도로교통정보표지판","경기도 성남시"),
-   ("춘천시 ITS 도로교통정보표지판","강원도 춘천시")]),
+   ("춘천시 ITS 도로교통정보표지판","강원도 춘천시"),
+   ("포항시 도로전광판","경상북도 포항시"),("대구시 도로전광판","대구광역시")]),
  ("버스정보안내 단말기 (BIT)", [
    ("화성시 버스정보안내단말기","경기도 화성시"),("수원시 버스정보안내단말기","경기도 수원시"),
    ("용인시 버스정보안내단말기","경기도 용인시"),("안양시 버스정보안내단말기","경기도 안양시"),
-   ("광명시 버스정보안내단말기","경기도 광명시"),("광명시 스마트 버스정류장","경기도 광명시")]),
+   ("광명시 버스정보안내단말기","경기도 광명시"),("성남시 버스정보안내단말기","경기도 성남시"),
+   ("안동시 버스정보안내단말기","경상북도 안동시")]),
+ ("스마트 쉘터", [
+   ("부산시 스마트 쉘터 (버스정보안내기 포함)","부산광역시"),
+   ("광명시 스마트 쉘터 (버스정보안내기 포함)","경기도 광명시"),
+   ("성남시 스마트 쉘터 유지보수","경기도 성남시")]),
  ("긴급차량 우선신호 시스템", [
    ("서울시 긴급차량 우선신호 시스템","서울특별시"),("영천시 긴급차량 출동안내 전광판","경상북도 영천시"),
    ("수원시 긴급차량 출동안내 전광판","경기도 수원시"),("광명시 긴급차량 출동안내 전광판","경기도 광명시"),
@@ -1223,10 +1229,19 @@ REC = [
    ("안동시 신시장 직진금지 안내 시스템","경상북도 안동시")]),
 ]
 _cats = ""
-REC_IMG = ["vms", "bit", "evs2", "ssz2", "ecs"]   # 카테고리 순서와 1:1
+# 카테고리 이름 → 썸네일. 순서를 바꾸거나 챕터를 늘려도 어긋나지 않습니다.
+REC_IMG = {
+  "도로교통 전광판 (VMS)": "vms",
+  "버스정보안내 단말기 (BIT)": "bit",
+  "스마트 쉘터": "bitx",
+  "긴급차량 우선신호 시스템": "evs2",
+  "보행자 안전 · 스마트 스쿨존": "ssz2",
+  "전기차 충전소 · 기타": "ecs",
+}
 for _ci, (cname, rows) in enumerate(REC):
     lis = "".join(f'<li><b>{a}</b><span>{b}</span></li>' for a, b in rows)
-    _thumb = ('<span class="rec-thumb">%s</span>' % pimg(REC_IMG[_ci], "../")) if _ci < len(REC_IMG) else ""
+    _k = REC_IMG.get(cname)
+    _thumb = ('<span class="rec-thumb">%s</span>' % pimg(_k, "../")) if _k else ""
     _cats += (f'<div class="rec-cat" data-reveal>'
               f'<h3>{_thumb}<span class="rec-t">{cname}</span>'
               f'<span class="cnt">{len(rows)}건</span></h3>'
@@ -1260,9 +1275,19 @@ HIST_TPL = """<section class="section tl-sec"><div class="area-box">
 # 출처: 일반현황 상림.pptx (주요연혁) + 회사소개서 25ver
 #   k = 구분 | b:사업수주  c:인증·등록  s:창업
 HISTORY = [
- ("2026", "클라우드 전환기", [
-   ("b", "2026년 평택시 ITS 통합 유지관리 용역", "수행중", 1),
-   ("b", "버스정보시스템(BIS) 확장 구축 사업 · 안동시", "수행중", 1),
+ ("2026", "전국 운영 확대", [
+   ("b", "부산광역시 버스정보관리시스템(BIMS) 구축 사업", "", 1),
+   ("b", "서울시 버스정보안내단말기 제조 구매 및 교체", "", 1),
+   ("b", "KTX 광명역 버스정보 안내시스템 고도화 사업", "", 1),
+   ("b", "서산시 주차정보 공유서비스 구축사업", "", 0),
+   ("b", "상주시 긴급차량우선신호 연계 고도화 사업", "", 0),
+   ("b", "화성시 지능형교통체계(ITS) 통합 유지보수", "", 0),
+   ("b", "평택시 지능형교통체계(ITS) 통합 유지보수", "수행중", 0),
+   ("b", "남양주시 교통정보시스템 통합 유지보수", "", 0),
+   ("b", "광명시 지능형교통체계(ITS&amp;BIS) 통합 유지보수", "", 0),
+   ("b", "광명시 스마트 CCTV 통합 유지관리", "", 0),
+   ("b", "안동시 지능형교통체계(ITS) 유지관리", "", 0),
+   ("b", "버스정보시스템(BIS) 확장 구축 사업 · 안동시", "수행중", 0),
  ]),
  ("2025", "광역시 진출", [
    ("b", "2025년 부산광역시 버스정보관리시스템(BIMS) 추가 및 개선사업", "", 1),
@@ -1332,7 +1357,7 @@ PAGES.append(("company/history.html", "연혁",
 
 
 PAGES.append(("company/rnd.html", "기업부설연구소", "2022년 출범한 상림기술 기업부설연구소와 R&D 비전.", "company", '<section class="section"><div class="area">\n<div class="section-head" data-reveal><span class="eyebrow">R&amp;D CENTER</span><h2>기업부설연구소</h2><p class="lead">2022년 출범 · 첨단 교통정보 시스템 개발</p></div>\n<div class="lead-box" data-reveal><p>상림기술 연구소는 2022년 기업부설연구소로 출범하여 첨단 교통정보 시스템 개발에 앞장서 왔습니다.\n우수한 연구인력을 통해 전국 주요 지자체의 지능형교통체계(ITS), 버스정보시스템(BIS),\n긴급차량 우선신호 서비스, 스마트 스쿨존 서비스를 성공적으로 구축하는 등 경쟁력을 갖춘 연구소로 거듭나고 있으며,\n지속적인 고도화를 통해 그 기술력을 인정받고 있습니다.</p></div>\n</div></section>\n\n<section class="section" style="background:var(--c-bg-soft)"><div class="area-box">\n<div class="section-head" data-reveal><span class="eyebrow">R&amp;D VISION</span><h2>연구 비전</h2></div>\n<div class="rnd-grid" data-reveal-stagger="120">\n  <article class="rnd-card" data-reveal>\n    <span class="n">CORE</span><h3>솔루션 구축</h3>\n    <p>핵심 성장 동력은 교통부문 솔루션 제공입니다. 상림기술의 솔루션은 높은 안정성과 데이터 정합성을 보장하며,\n    사용자의 편의성 개선을 위해 공인기관에서 객관적인 평가를 받아 개선하는 등 교통시스템 분야에서 활발히 연구하고 있습니다.</p>\n  </article>\n  <article class="rnd-card" data-reveal>\n    <span class="n">MID-LONG TERM</span><h3>시스템 고도화</h3>\n    <p>솔루션 연구와 구축을 통해 축적한 내부역량을 바탕으로 기존 시스템에 대한 고도화 기능을 제공하는 것을 목표로 합니다.\n    이를 통해 해외 시장에 진출 가능한 첨단 솔루션을 개발하고자 합니다.</p>\n  </article>\n  <article class="rnd-card" data-reveal>\n    <span class="n">NEW GROWTH</span><h3>신규 시스템 개발</h3>\n    <p>기존 교통 시스템의 규격과 한계를 극복하고자 합니다. 기 구축 시스템과 AI 분야의 융합,\n    클라우드화에 대한 연구를 진행하며 이를 구현하기 위한 다양한 연구를 활발히 수행하고 있습니다.</p>\n  </article>\n</div>\n</div></section>'))
-PAGES.append(("company/partners.html", "파트너사", "상림기술과 함께한 공공기관·민간기업 파트너.", "company", '<section class="section"><div class="area-box">\n<div class="section-head" data-reveal><span class="eyebrow">PARTNERS</span><h2>파트너사</h2><p class="lead">상림기술과 함께한 기관과 기업입니다.</p></div>\n<div class="pt-tabs" data-reveal>\n  <button class="on" data-cat="all">전체 30</button>\n  <button data-cat="pub">공공부문 21</button>\n  <button data-cat="pri">민간부문 9</button>\n</div>\n<div class="pt-grid" id="ptGrid" data-reveal-stagger="45"><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-01.png" alt="화성시" loading="lazy"><figcaption class="pt-name">화성시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-02.png" alt="광명시" loading="lazy"><figcaption class="pt-name">광명시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-03.png" alt="용인시" loading="lazy"><figcaption class="pt-name">용인시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-04.png" alt="서울특별시" loading="lazy"><figcaption class="pt-name">서울특별시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-05.png" alt="안양시" loading="lazy"><figcaption class="pt-name">안양시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-06.png" alt="안동시" loading="lazy"><figcaption class="pt-name">안동시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-07.png" alt="파주시" loading="lazy"><figcaption class="pt-name">파주시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-08.png" alt="수원시" loading="lazy"><figcaption class="pt-name">수원시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-09.png" alt="광양시" loading="lazy"><figcaption class="pt-name">광양시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-10.png" alt="김포시" loading="lazy"><figcaption class="pt-name">김포시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-11.png" alt="성남시" loading="lazy"><figcaption class="pt-name">성남시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-12.png" alt="대전광역시" loading="lazy"><figcaption class="pt-name">대전광역시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-13.png" alt="세종특별자치시" loading="lazy"><figcaption class="pt-name">세종특별자치시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-14.png" alt="춘천시" loading="lazy"><figcaption class="pt-name">춘천시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-15.png" alt="경주시" loading="lazy"><figcaption class="pt-name">경주시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-16.png" alt="충청남도" loading="lazy"><figcaption class="pt-name">충청남도</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-17.png" alt="청주시" loading="lazy"><figcaption class="pt-name">청주시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-18.png" alt="고양특례시" loading="lazy"><figcaption class="pt-name">고양특례시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-19.png" alt="영천시" loading="lazy"><figcaption class="pt-name">영천시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-20.png" alt="제천시" loading="lazy"><figcaption class="pt-name">제천시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-21.png" alt="제주특별자치도" loading="lazy"><figcaption class="pt-name">제주특별자치도</figcaption></figure><figure class="pt" data-cat="pri" data-reveal><img src="../assets/img/partner/pri-01.png" alt="GS칼텍스" loading="lazy"><figcaption class="pt-name">GS칼텍스</figcaption></figure><figure class="pt" data-cat="pri" data-reveal><img src="../assets/img/partner/pri-02.png" alt="EASY CHARGER" loading="lazy"><figcaption class="pt-name">EASY CHARGER</figcaption></figure><figure class="pt" data-cat="pri" data-reveal><img src="../assets/img/partner/pri-03.png" alt="SONGAM" loading="lazy"><figcaption class="pt-name">SONGAM</figcaption></figure><figure class="pt" data-cat="pri" data-reveal><img src="../assets/img/partner/pri-04.png" alt="KT" loading="lazy"><figcaption class="pt-name">KT</figcaption></figure><figure class="pt" data-cat="pri" data-reveal><img src="../assets/img/partner/pri-05.png" alt="SK telecom" loading="lazy"><figcaption class="pt-name">SK telecom</figcaption></figure><figure class="pt" data-cat="pri" data-reveal><img src="../assets/img/partner/pri-06.png" alt="한국정보기술" loading="lazy"><figcaption class="pt-name">한국정보기술</figcaption></figure><figure class="pt" data-cat="pri" data-reveal><img src="../assets/img/partner/pri-07.png" alt="대보정보통신" loading="lazy"><figcaption class="pt-name">대보정보통신</figcaption></figure><figure class="pt" data-cat="pri" data-reveal><img src="../assets/img/partner/pri-08.png" alt="TRACOM" loading="lazy"><figcaption class="pt-name">TRACOM</figcaption></figure><figure class="pt" data-cat="pri" data-reveal><img src="../assets/img/partner/pri-09.png" alt="대흥정보" loading="lazy"><figcaption class="pt-name">대흥정보</figcaption></figure></div>\n<div class="lead-box" data-reveal style="margin-top:52px;margin-bottom:0">\n<p>전국 지자체와 공공기관, 그리고 민간 기업과 함께 교통 인프라를 구축하고 있습니다.\n로고에 마우스를 올리면 원래 색상으로 크게 확대됩니다.</p></div>\n</div></section>'))
+PAGES.append(("company/partners.html", "고객사", "상림기술과 함께한 공공기관·민간기업 고객사.", "company", '<section class="section"><div class="area-box">\n<div class="section-head" data-reveal><span class="eyebrow">CLIENTS</span><h2>고객사</h2><p class="lead">상림기술과 함께한 기관과 기업입니다.</p></div>\n<div class="pt-tabs" data-reveal>\n  <button class="on" data-cat="all">전체 25</button>\n  <button data-cat="pub">공공부문 21</button>\n  <button data-cat="pri">민간부문 4</button>\n</div>\n<div class="pt-grid" id="ptGrid" data-reveal-stagger="45"><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-01.png" alt="화성시" loading="lazy"><figcaption class="pt-name">화성시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-02.png" alt="광명시" loading="lazy"><figcaption class="pt-name">광명시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-03.png" alt="용인시" loading="lazy"><figcaption class="pt-name">용인시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-04.png" alt="서울특별시" loading="lazy"><figcaption class="pt-name">서울특별시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-05.png" alt="안양시" loading="lazy"><figcaption class="pt-name">안양시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-06.png" alt="안동시" loading="lazy"><figcaption class="pt-name">안동시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-07.png" alt="파주시" loading="lazy"><figcaption class="pt-name">파주시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-08.png" alt="수원시" loading="lazy"><figcaption class="pt-name">수원시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-09.png" alt="광양시" loading="lazy"><figcaption class="pt-name">광양시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-10.png" alt="김포시" loading="lazy"><figcaption class="pt-name">김포시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-11.png" alt="성남시" loading="lazy"><figcaption class="pt-name">성남시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-12.png" alt="대전광역시" loading="lazy"><figcaption class="pt-name">대전광역시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-13.png" alt="세종특별자치시" loading="lazy"><figcaption class="pt-name">세종특별자치시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-14.png" alt="춘천시" loading="lazy"><figcaption class="pt-name">춘천시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-15.png" alt="경주시" loading="lazy"><figcaption class="pt-name">경주시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-16.png" alt="충청남도" loading="lazy"><figcaption class="pt-name">충청남도</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-17.png" alt="청주시" loading="lazy"><figcaption class="pt-name">청주시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-18.png" alt="고양특례시" loading="lazy"><figcaption class="pt-name">고양특례시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-19.png" alt="영천시" loading="lazy"><figcaption class="pt-name">영천시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-20.png" alt="제천시" loading="lazy"><figcaption class="pt-name">제천시</figcaption></figure><figure class="pt" data-cat="pub" data-reveal><img src="../assets/img/partner/pub-21.png" alt="제주특별자치도" loading="lazy"><figcaption class="pt-name">제주특별자치도</figcaption></figure><figure class="pt" data-cat="pri" data-reveal><img src="../assets/img/partner/pri-01.png" alt="GS칼텍스" loading="lazy"><figcaption class="pt-name">GS칼텍스</figcaption></figure><figure class="pt" data-cat="pri" data-reveal><img src="../assets/img/partner/pri-02.png" alt="EASY CHARGER" loading="lazy"><figcaption class="pt-name">EASY CHARGER</figcaption></figure><figure class="pt" data-cat="pri" data-reveal><img src="../assets/img/partner/pri-04.png" alt="KT" loading="lazy"><figcaption class="pt-name">KT</figcaption></figure><figure class="pt" data-cat="pri" data-reveal><img src="../assets/img/partner/pri-05.png" alt="SK telecom" loading="lazy"><figcaption class="pt-name">SK telecom</figcaption></figure></div>\n<div class="lead-box" data-reveal style="margin-top:52px;margin-bottom:0">\n<p>전국 지자체와 공공기관, 그리고 민간 기업과 함께 교통 인프라를 구축하고 있습니다.\n로고에 마우스를 올리면 원래 색상으로 크게 확대됩니다.</p></div>\n</div></section>'))
 
 PAGES.append(("company/record.html", "구축사례", f"상림기술이 전국 지자체·기관에 구축한 {_total}건의 사례입니다.", "company", record))
 
@@ -2241,11 +2266,11 @@ evs = f'''<section class="section dark-sec"><div class="area">
 <section class="section dark-sec dark-sec2"><div class="area">
   <div class="section-head is-dark" data-reveal><span class="eyebrow">ON THE ROAD</span>
   <h2>사이렌보다 먼저 도착하는 신호</h2>
-  <p class="lead">긴급차량 출동안내 전광판은 교차로 진입 전에 일반 차량 운전자가
-  상황을 알아차리도록 만드는 장비입니다.</p></div>
+  <p class="lead">긴급차량 출동안내 전광판은<br>
+  교차로 진입 전에 일반 차량 운전자가 상황을 알아차리도록 만드는 장비입니다.</p></div>
   <div class="dsol">
-    <figure class="dsol-fig" data-reveal data-speed="0.06">
-      <span class="dsol-glow"></span>{pimg("evs2", "../")}
+    <figure class="dsol-fig is-white" data-reveal data-speed="0.06">
+      {pimg("evs2", "../")}
     </figure>
     <div class="dsol-body">
       <p class="dsol-lead" data-reveal>소방차·구급차가 지나갈 길을, 도로 위의 장비가 미리 만들어 둡니다.</p>
@@ -2568,7 +2593,7 @@ for i, (ser, name, url, icon, desc, models) in enumerate(_PRODS):
          ser, name, desc, chips, url, _ARROW)
 
 home_body = f'''{_hero}
-<section class="section" style="background:var(--c-bg-soft)"><div class="area">
+<section class="section" id="business" style="background:var(--c-bg-soft)"><div class="area">
 {techvision("BUSINESS AREA",
   ["지능형 교통체계부터",
    "스마트 스쿨존까지,",
@@ -2585,7 +2610,7 @@ home_body = f'''{_hero}
 <div class="acc" id="prodAcc" data-reveal>{_acc}</div>
 </div></section>
 
-<section class="section" style="padding-block:clamp(46px,6vw,80px)"><div class="area-wrap"><div class="section-head" data-reveal style="margin-bottom:34px;text-align:center;max-width:none"><span class="eyebrow">PARTNERS</span><h2 style="font-size:clamp(1.4rem,2.2vw,2rem)">전국 지자체·공공기관과 함께합니다</h2></div><div class="pt-strip" data-reveal><div class="pt-track" id="ptTrack"><img src="assets/img/partner/pub-01.png" alt="화성시" loading="lazy"><img src="assets/img/partner/pub-02.png" alt="광명시" loading="lazy"><img src="assets/img/partner/pub-03.png" alt="용인시" loading="lazy"><img src="assets/img/partner/pub-04.png" alt="서울특별시" loading="lazy"><img src="assets/img/partner/pub-05.png" alt="안양시" loading="lazy"><img src="assets/img/partner/pub-06.png" alt="안동시" loading="lazy"><img src="assets/img/partner/pub-07.png" alt="파주시" loading="lazy"><img src="assets/img/partner/pub-08.png" alt="수원시" loading="lazy"><img src="assets/img/partner/pub-09.png" alt="광양시" loading="lazy"><img src="assets/img/partner/pub-10.png" alt="김포시" loading="lazy"><img src="assets/img/partner/pub-11.png" alt="성남시" loading="lazy"><img src="assets/img/partner/pub-12.png" alt="대전광역시" loading="lazy"><img src="assets/img/partner/pub-13.png" alt="세종특별자치시" loading="lazy"><img src="assets/img/partner/pub-14.png" alt="춘천시" loading="lazy"><img src="assets/img/partner/pub-15.png" alt="경주시" loading="lazy"><img src="assets/img/partner/pub-16.png" alt="충청남도" loading="lazy"><img src="assets/img/partner/pub-17.png" alt="청주시" loading="lazy"><img src="assets/img/partner/pub-18.png" alt="고양특례시" loading="lazy"><img src="assets/img/partner/pub-19.png" alt="영천시" loading="lazy"><img src="assets/img/partner/pub-20.png" alt="제천시" loading="lazy"><img src="assets/img/partner/pub-21.png" alt="제주특별자치도" loading="lazy"></div></div><div class="pt-more"><a href="company/partners.html" class="btn btn-primary">파트너사 전체 보기<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></section>
+<section class="section" style="padding-block:clamp(46px,6vw,80px)"><div class="area-wrap"><div class="section-head" data-reveal style="margin-bottom:34px;text-align:center;max-width:none"><span class="eyebrow">CLIENTS</span><h2 style="font-size:clamp(1.4rem,2.2vw,2rem)">전국 지자체·공공기관과 함께합니다</h2></div><div class="pt-strip" data-reveal><div class="pt-track" id="ptTrack"><img src="assets/img/partner/pub-01.png" alt="화성시" loading="lazy"><img src="assets/img/partner/pub-02.png" alt="광명시" loading="lazy"><img src="assets/img/partner/pub-03.png" alt="용인시" loading="lazy"><img src="assets/img/partner/pub-04.png" alt="서울특별시" loading="lazy"><img src="assets/img/partner/pub-05.png" alt="안양시" loading="lazy"><img src="assets/img/partner/pub-06.png" alt="안동시" loading="lazy"><img src="assets/img/partner/pub-07.png" alt="파주시" loading="lazy"><img src="assets/img/partner/pub-08.png" alt="수원시" loading="lazy"><img src="assets/img/partner/pub-09.png" alt="광양시" loading="lazy"><img src="assets/img/partner/pub-10.png" alt="김포시" loading="lazy"><img src="assets/img/partner/pub-11.png" alt="성남시" loading="lazy"><img src="assets/img/partner/pub-12.png" alt="대전광역시" loading="lazy"><img src="assets/img/partner/pub-13.png" alt="세종특별자치시" loading="lazy"><img src="assets/img/partner/pub-14.png" alt="춘천시" loading="lazy"><img src="assets/img/partner/pub-15.png" alt="경주시" loading="lazy"><img src="assets/img/partner/pub-16.png" alt="충청남도" loading="lazy"><img src="assets/img/partner/pub-17.png" alt="청주시" loading="lazy"><img src="assets/img/partner/pub-18.png" alt="고양특례시" loading="lazy"><img src="assets/img/partner/pub-19.png" alt="영천시" loading="lazy"><img src="assets/img/partner/pub-20.png" alt="제천시" loading="lazy"><img src="assets/img/partner/pub-21.png" alt="제주특별자치도" loading="lazy"></div></div><div class="pt-more"><a href="company/partners.html" class="btn btn-primary">고객사 전체 보기<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></section>
 
 <section class="section band"><div class="area-box">
 <div class="section-head" data-reveal><span class="eyebrow" style="color:var(--c-accent-bright)">TRACK RECORD</span>
